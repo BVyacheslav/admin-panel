@@ -1,3 +1,6 @@
+import { ReactComponent as DeleteIcon} from './icons/x-medium.svg';
+import { ReactComponent as LockedIcon} from './icons/locked.svg';
+
 import "./style/reset.css";
 import "./style/input.css";
 import "./style/search-bar.css";
@@ -5,79 +8,15 @@ import "./style/checkbox-radio.css";
 import "./style/button.css";
 import "./style/dropdown.css";
 
+import {Input} from './components/Input/Input';
+
 function App() {
   return (
     <div className="App">
       <div class="wrapper">
-        <div class="text-field">
-          <label class="text-field__label" for="text-field__input">
-            Дата и время заказа
-          </label>
-          <div class="text-field__input-wrapper">
-            <input
-              id="text-field__input"
-              class="text-field__input"
-              placeholder="Введите"
-            />
-          </div>
-        </div>
-
-        <div class="text-field">
-          <label class="text-field__label" for="text-field_error">
-            Дата и время заказа
-          </label>
-          <div class="text-field__input-wrapper">
-            <input
-              id="text-field_error"
-              class="text-field__input text-field_error"
-              value="06.12.2021"
-              placeholder="Введите"
-            />
-            <button class="text-field__delete">
-              <svg
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="#BAD8F5"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5" fill="none" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="text-field">
-          <label class="text-field__label" for="text-field_locked">
-            Дата и время заказа
-          </label>
-          <div class="text-field__input-wrapper">
-            <input
-              id="text-field_locked"
-              class="text-field__input text-field_locked"
-              placeholder="Введите"
-              value="06.12.2021"
-              disabled
-            />
-            <svg
-              class="text-field__locked-icon"
-              viewBox="0 0 16 16"
-              fill="#000000"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M4 5C4 2.79086 5.79086 1 8 1C10.2091 1 12 2.79086 12 5V7C13.1046 7 14 7.89543 14 9V13C14 14.1046 13.1046 15 12 15H4C2.89543 15 2 14.1046 2 13V9C2 7.89543 2.89543 7 4 7V5ZM10 5V7H6V5C6 3.89543 6.89543 3 8 3C9.10457 3 10 3.89543 10 5Z"
-                stroke="none"
-              />
-              <path
-                d="M12 5C12 2.8 10.2 1 8 1C5.8 1 4 2.8 4 5L4 9H6V5C6 3.75 7 3 8 3C9 3 10 3.75 10 5V9H12V5Z"
-                stroke="none"
-              />
-            </svg>
-          </div>
-        </div>
+        <Input />
+        <Input value="06.12.2021" error icon={<DeleteIcon></DeleteIcon>} />
+        <Input value="06.12.2021" locked icon={<LockedIcon></LockedIcon>} />
       </div>
 
       <div class="wrapper__search-bar">
