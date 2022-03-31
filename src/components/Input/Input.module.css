@@ -1,12 +1,7 @@
-._ {
-  display: flex;
-  flex-direction: column;
-  font-family: "Ubuntu", sans-serif;
-  font-size: 13px;
-}
-
 .inputWrapper {
   display: flex;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 13px;
   align-items: center;
   position: relative;
 }
@@ -43,12 +38,7 @@
   color: #000000;
 }
 
-.label {
-  margin-bottom: 8px;
-  height: 16px;
-}
-
-.delete {
+.deleteIcon {
   position: absolute;
   height: 16px;
   width: 16px;
@@ -64,4 +54,5 @@
   height: 16px;
   position: absolute;
   right: 10px;
+  fill: #000000;
 }

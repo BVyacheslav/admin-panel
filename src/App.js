@@ -1,5 +1,5 @@
-import { ReactComponent as DeleteIcon } from "./icons/x-medium.svg";
-import { ReactComponent as LockedIcon } from "./icons/locked.svg";
+import { Input } from "./components/Input/Input";
+import { TextField } from "./components/TextField/TextField";
 
 import "./style/reset.css";
 import "./style/input.css";
@@ -8,15 +8,24 @@ import "./style/checkbox-radio.css";
 import "./style/button.css";
 import "./style/dropdown.css";
 
-import { Input } from "./components/Input/Input";
-
 function App() {
   return (
     <div className="App">
       <div class="wrapper">
-        <Input />
-        <Input value="06.12.2021" error icon={<DeleteIcon></DeleteIcon>} />
-        <Input value="06.12.2021" locked icon={<LockedIcon></LockedIcon>} />
+        <TextField label="Дата и время заказа" placeholder="Введите" />
+        <TextField
+          label="Дата и время заказа"
+          placeholder="Введите"
+          defaultValue="06.12.2021"
+          error
+        />
+        <TextField
+          label="Дата и время заказа"
+          placeholder="Введите"
+          defaultValue="06.12.2021"
+          locked
+          disabled
+        />
       </div>
 
       <div class="wrapper__search-bar">
