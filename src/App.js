@@ -406,7 +406,7 @@ function App() {
       <div className="wrapper__dropdown">
         <div className="wrapper__elements">
           <div className="dropdown">
-            <div className="checkbox">
+            <div className="checkbox checkbox_dropdown">
               <input
                 type="checkbox"
                 className="checkbox__input"
@@ -432,7 +432,7 @@ function App() {
               </label>
             </div>
 
-            <div className="checkbox">
+            <div className="checkbox checkbox_dropdown">
               <input
                 type="checkbox"
                 className="checkbox__input"
@@ -458,7 +458,7 @@ function App() {
               </label>
             </div>
 
-            <div className="checkbox">
+            <div className="checkbox checkbox_dropdown">
               <input
                 type="checkbox"
                 className="checkbox__input"
@@ -485,7 +485,7 @@ function App() {
               </label>
             </div>
 
-            <div className="checkbox">
+            <div className="checkbox checkbox_dropdown">
               <input
                 type="checkbox"
                 className="checkbox__input"
@@ -511,7 +511,7 @@ function App() {
               </label>
             </div>
 
-            <div className="checkbox">
+            <div className="checkbox checkbox_dropdown">
               <input
                 type="checkbox"
                 className="checkbox__input"
@@ -537,7 +537,7 @@ function App() {
               </label>
             </div>
 
-            <div className="checkbox">
+            <div className="checkbox checkbox_dropdown">
               <input
                 type="checkbox"
                 className="checkbox__input"
@@ -565,7 +565,7 @@ function App() {
           </div>
 
           <div className="dropdown">
-            <div className="radio">
+            <div className="radio radio_dropdown">
               <input
                 type="radio"
                 name="dropdown-radio"
@@ -577,7 +577,7 @@ function App() {
               </label>
             </div>
 
-            <div className="radio">
+            <div className="radio radio_dropdown">
               <input
                 type="radio"
                 name="dropdown-radio"
@@ -589,7 +589,7 @@ function App() {
               </label>
             </div>
 
-            <div className="radio">
+            <div className="radio radio_dropdown">
               <input
                 type="radio"
                 name="dropdown-radio"
@@ -602,7 +602,7 @@ function App() {
               </label>
             </div>
 
-            <div className="radio">
+            <div className="radio radio_dropdown">
               <input
                 type="radio"
                 name="dropdown-radio"
@@ -614,7 +614,7 @@ function App() {
               </label>
             </div>
 
-            <div className="radio">
+            <div className="radio radio_dropdown">
               <input
                 type="radio"
                 name="dropdown-radio"
@@ -626,7 +626,7 @@ function App() {
               </label>
             </div>
 
-            <div className="radio">
+            <div className="radio radio_dropdown">
               <input
                 type="radio"
                 name="dropdown-radio"

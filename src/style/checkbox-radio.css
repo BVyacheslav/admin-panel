@@ -10,6 +10,10 @@
   border-radius: 5px;
 }
 
+.checkbox_dropdown {
+  width: 100%;
+}
+
 .checkbox__input {
   position: absolute;
   z-index: -1;
@@ -31,6 +35,7 @@
 }
 
 .checkbox__label_dropdown {
+  width: 100%;
   padding-bottom: 16px;
 }
 
@@ -63,6 +68,10 @@
   border: 1px dashed #8055ff;
   box-sizing: border-box;
   border-radius: 5px;
+}
+
+.radio_dropdown {
+  width: 100%;
 }
 
 .radio__input {
