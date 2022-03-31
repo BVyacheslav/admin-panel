@@ -8,32 +8,32 @@ import "./style/dropdown.css";
 function App() {
   return (
     <div className="App">
-      <div class="wrapper">
-        <div class="text-field">
-          <label class="text-field__label" for="text-field__input">
+      <div className="wrapper">
+        <div className="text-field">
+          <label className="text-field__label" htmlFor="text-field__input">
             Дата и время заказа
           </label>
-          <div class="text-field__input-wrapper">
+          <div className="text-field__input-wrapper">
             <input
               id="text-field__input"
-              class="text-field__input"
+              className="text-field__input"
               placeholder="Введите"
             />
           </div>
         </div>
 
-        <div class="text-field">
-          <label class="text-field__label" for="text-field_error">
+        <div className="text-field">
+          <label className="text-field__label" htmlFor="text-field_error">
             Дата и время заказа
           </label>
-          <div class="text-field__input-wrapper">
+          <div className="text-field__input-wrapper">
             <input
               id="text-field_error"
-              class="text-field__input text-field_error"
+              className="text-field__input text-field_error"
               value="06.12.2021"
               placeholder="Введите"
             />
-            <button class="text-field__delete">
+            <button className="text-field__delete">
               <svg
                 viewBox="0 0 16 16"
                 fill="none"
@@ -46,20 +46,20 @@ function App() {
           </div>
         </div>
 
-        <div class="text-field">
-          <label class="text-field__label" for="text-field_locked">
+        <div className="text-field">
+          <label className="text-field__label" htmlFor="text-field_locked">
             Дата и время заказа
           </label>
-          <div class="text-field__input-wrapper">
+          <div className="text-field__input-wrapper">
             <input
               id="text-field_locked"
-              class="text-field__input text-field_locked"
+              className="text-field__input text-field_locked"
               placeholder="Введите"
               value="06.12.2021"
               disabled
             />
             <svg
-              class="text-field__locked-icon"
+              className="text-field__locked-icon"
               viewBox="0 0 16 16"
               fill="#000000"
               stroke="none"
@@ -80,11 +80,11 @@ function App() {
         </div>
       </div>
 
-      <div class="wrapper__search-bar">
-        <div class="search-bar">
-          <div class="search-bar__input-wrapper">
+      <div className="wrapper__search-bar">
+        <div className="search-bar">
+          <div className="search-bar__input-wrapper">
             <svg
-              class="search-bar__icon"
+              className="search-bar__icon"
               viewBox="0 0 16 16"
               fill="none"
               stroke="#459DF5"
@@ -93,16 +93,16 @@ function App() {
               <path d="M10.036 10.036a5 5 0 1 0-7.071-7.072 5 5 0 0 0 7.07 7.072Zm0 0L14 14m0 0 .5-.5-3-3M14 14l-.5.5-3-3" />
             </svg>
             <input
-              class="search-bar__input"
+              className="search-bar__input"
               placeholder="Номер заказа или ФИО"
             />
           </div>
         </div>
 
-        <div class="search-bar">
-          <div class="search-bar__input-wrapper">
+        <div className="search-bar">
+          <div className="search-bar__input-wrapper">
             <svg
-              class="search-bar__icon"
+              className="search-bar__icon"
               viewBox="0 0 16 16"
               fill="none"
               stroke="#459DF5"
@@ -111,11 +111,11 @@ function App() {
               <path d="M10.036 10.036a5 5 0 1 0-7.071-7.072 5 5 0 0 0 7.07 7.072Zm0 0L14 14m0 0 .5-.5-3-3M14 14l-.5.5-3-3" />
             </svg>
             <input
-              class="search-bar__input"
+              className="search-bar__input"
               value="50744"
               placeholder="Номер заказа или ФИО"
             />
-            <button class="search-bar__delete">
+            <button className="search-bar__delete">
               <svg
                 viewBox="0 0 16 16"
                 fill="none"
@@ -129,12 +129,12 @@ function App() {
         </div>
       </div>
 
-      <div class="wrapper__checkbox">
-        <div class="checkbox">
-          <input type="checkbox" class="checkbox__input" id="valueCheck1" />
-          <label class="checkbox__label" for="valueCheck1">
+      <div className="wrapper__checkbox">
+        <div className="checkbox">
+          <input type="checkbox" className="checkbox__input" id="valueCheck1" />
+          <label className="checkbox__label" htmlFor="valueCheck1">
             <svg
-              class="checkbox__icon"
+              className="checkbox__icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -148,17 +148,17 @@ function App() {
           </label>
         </div>
 
-        <div class="checkbox">
+        <div className="checkbox">
           <input
             type="checkbox"
-            class="checkbox__input"
+            className="checkbox__input"
             id="valueCheck2"
             checked
           />
 
-          <label class="checkbox__label" for="valueCheck2">
+          <label className="checkbox__label" htmlFor="valueCheck2">
             <svg
-              class="checkbox__icon"
+              className="checkbox__icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -173,17 +173,17 @@ function App() {
         </div>
       </div>
 
-      <div class="wrapper__radio">
-        <div class="radio">
+      <div className="wrapper__radio">
+        <div className="radio">
           <input
             type="radio"
             name="value"
-            class="radio__input"
+            className="radio__input"
             id="valueChoice1"
           />
-          <label class="radio__label" for="valueChoice1">
+          <label className="radio__label" htmlFor="valueChoice1">
             <svg
-              class="radio__icon"
+              className="radio__icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -194,17 +194,17 @@ function App() {
           </label>
         </div>
 
-        <div class="radio">
+        <div className="radio">
           <input
             type="radio"
             name="value"
-            class="radio__input"
+            className="radio__input"
             id="valueChoice2"
             checked
           />
-          <label class="radio__label" for="valueChoice2">
+          <label className="radio__label" htmlFor="valueChoice2">
             <svg
-              class="radio__icon"
+              className="radio__icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -216,11 +216,11 @@ function App() {
         </div>
       </div>
 
-      <div class="wrapper__button">
-        <div class="button-box">
-          <button class="button button_white button_medium button-box__button">
+      <div className="wrapper__button">
+        <div className="button-box">
+          <button className="button button_white button_medium button-box__button">
             <svg
-              class="icon"
+              className="icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -231,53 +231,16 @@ function App() {
                 stroke="none"
               />
             </svg>
-            <span class="button__text">Text here</span>
+            <span className="button__text">Text here</span>
           </button>
 
-          <button class="button button_white button_medium button-box__button">
-            <span class="button__text">Text here</span>
+          <button className="button button_white button_medium button-box__button">
+            <span className="button__text">Text here</span>
           </button>
 
-          <button class="button button_white button_only-icon button-box__button">
+          <button className="button button_white button_only-icon button-box__button">
             <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <div class="button-box">
-          <button class="button button_blue button_medium button-box__button">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_blue button_medium button-box__button">
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_blue button_only-icon">
-            <svg
-              class="icon"
+              className="icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -291,10 +254,10 @@ function App() {
           </button>
         </div>
 
-        <div class="button-box">
-          <button class="button button_black button_medium button-box__button">
+        <div className="button-box">
+          <button className="button button_blue button_medium button-box__button">
             <svg
-              class="icon"
+              className="icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -305,53 +268,16 @@ function App() {
                 stroke="none"
               />
             </svg>
-            <span class="button__text">Text here</span>
+            <span className="button__text">Text here</span>
           </button>
 
-          <button class="button button_black button_medium button-box__button">
-            <span class="button__text">Text here</span>
+          <button className="button button_blue button_medium button-box__button">
+            <span className="button__text">Text here</span>
           </button>
 
-          <button class="button button_black button_only-icon">
+          <button className="button button_blue button_only-icon">
             <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
-        </div>
-
-        <div class="button-box">
-          <button class="button button_white button_small button-box__button">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_white button_small button-box__button">
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_white button_only-icon-small">
-            <svg
-              class="icon"
+              className="icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -365,10 +291,10 @@ function App() {
           </button>
         </div>
 
-        <div class="button-box">
-          <button class="button button_blue button_small button-box__button">
+        <div className="button-box">
+          <button className="button button_black button_medium button-box__button">
             <svg
-              class="icon"
+              className="icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -379,16 +305,90 @@ function App() {
                 stroke="none"
               />
             </svg>
-            <span class="button__text">Text here</span>
+            <span className="button__text">Text here</span>
           </button>
 
-          <button class="button button_blue button_small button-box__button">
-            <span class="button__text">Text here</span>
+          <button className="button button_black button_medium button-box__button">
+            <span className="button__text">Text here</span>
           </button>
 
-          <button class="button button_blue button_only-icon-small">
+          <button className="button button_black button_only-icon">
             <svg
-              class="icon"
+              className="icon"
+              viewBox="0 0 16 16"
+              fill="#ffffff"
+              stroke="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
+                stroke="none"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div className="button-box">
+          <button className="button button_white button_small button-box__button">
+            <svg
+              className="icon"
+              viewBox="0 0 16 16"
+              fill="#ffffff"
+              stroke="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
+                stroke="none"
+              />
+            </svg>
+            <span className="button__text">Text here</span>
+          </button>
+
+          <button className="button button_white button_small button-box__button">
+            <span className="button__text">Text here</span>
+          </button>
+
+          <button className="button button_white button_only-icon-small">
+            <svg
+              className="icon"
+              viewBox="0 0 16 16"
+              fill="#ffffff"
+              stroke="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
+                stroke="none"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div className="button-box">
+          <button className="button button_blue button_small button-box__button">
+            <svg
+              className="icon"
+              viewBox="0 0 16 16"
+              fill="#ffffff"
+              stroke="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
+                stroke="none"
+              />
+            </svg>
+            <span className="button__text">Text here</span>
+          </button>
+
+          <button className="button button_blue button_small button-box__button">
+            <span className="button__text">Text here</span>
+          </button>
+
+          <button className="button button_blue button_only-icon-small">
+            <svg
+              className="icon"
               viewBox="0 0 16 16"
               fill="#ffffff"
               stroke="none"
@@ -403,21 +403,21 @@ function App() {
         </div>
       </div>
 
-      <div class="wrapper__dropdown">
-        <div class="wrapper__elements">
-          <div class="dropdown">
-            <div class="checkbox">
+      <div className="wrapper__dropdown">
+        <div className="wrapper__elements">
+          <div className="dropdown">
+            <div className="checkbox">
               <input
                 type="checkbox"
-                class="checkbox__input"
+                className="checkbox__input"
                 id="dropdownCheck1"
               />
               <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck1"
+                className="checkbox__label checkbox__label_dropdown"
+                htmlFor="dropdownCheck1"
               >
                 <svg
-                  class="checkbox__icon"
+                  className="checkbox__icon"
                   viewBox="0 0 16 16"
                   fill="#ffffff"
                   stroke="none"
@@ -432,18 +432,18 @@ function App() {
               </label>
             </div>
 
-            <div class="checkbox">
+            <div className="checkbox">
               <input
                 type="checkbox"
-                class="checkbox__input"
+                className="checkbox__input"
                 id="dropdownCheck2"
               />
               <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck2"
+                className="checkbox__label checkbox__label_dropdown"
+                htmlFor="dropdownCheck2"
               >
                 <svg
-                  class="checkbox__icon"
+                  className="checkbox__icon"
                   viewBox="0 0 16 16"
                   fill="#ffffff"
                   stroke="none"
@@ -458,19 +458,19 @@ function App() {
               </label>
             </div>
 
-            <div class="checkbox">
+            <div className="checkbox">
               <input
                 type="checkbox"
-                class="checkbox__input"
+                className="checkbox__input"
                 id="dropdownCheck3"
                 checked
               />
               <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck3"
+                className="checkbox__label checkbox__label_dropdown"
+                htmlFor="dropdownCheck3"
               >
                 <svg
-                  class="checkbox__icon"
+                  className="checkbox__icon"
                   viewBox="0 0 16 16"
                   fill="#ffffff"
                   stroke="none"
@@ -485,18 +485,18 @@ function App() {
               </label>
             </div>
 
-            <div class="checkbox">
+            <div className="checkbox">
               <input
                 type="checkbox"
-                class="checkbox__input"
+                className="checkbox__input"
                 id="dropdownCheck4"
               />
               <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck4"
+                className="checkbox__label checkbox__label_dropdown"
+                htmlFor="dropdownCheck4"
               >
                 <svg
-                  class="checkbox__icon"
+                  className="checkbox__icon"
                   viewBox="0 0 16 16"
                   fill="#ffffff"
                   stroke="none"
@@ -511,18 +511,18 @@ function App() {
               </label>
             </div>
 
-            <div class="checkbox">
+            <div className="checkbox">
               <input
                 type="checkbox"
-                class="checkbox__input"
+                className="checkbox__input"
                 id="dropdownCheck5"
               />
               <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck5"
+                className="checkbox__label checkbox__label_dropdown"
+                htmlFor="dropdownCheck5"
               >
                 <svg
-                  class="checkbox__icon"
+                  className="checkbox__icon"
                   viewBox="0 0 16 16"
                   fill="#ffffff"
                   stroke="none"
@@ -537,18 +537,18 @@ function App() {
               </label>
             </div>
 
-            <div class="checkbox">
+            <div className="checkbox">
               <input
                 type="checkbox"
-                class="checkbox__input"
+                className="checkbox__input"
                 id="dropdownCheck6"
               />
               <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck6"
+                className="checkbox__label checkbox__label_dropdown"
+                htmlFor="dropdownCheck6"
               >
                 <svg
-                  class="checkbox__icon"
+                  className="checkbox__icon"
                   viewBox="0 0 16 16"
                   fill="#ffffff"
                   stroke="none"
@@ -564,114 +564,114 @@ function App() {
             </div>
           </div>
 
-          <div class="dropdown">
-            <div class="radio">
+          <div className="dropdown">
+            <div className="radio">
               <input
                 type="radio"
                 name="dropdown-radio"
-                class="radio__input"
+                className="radio__input"
                 id="dropdownChoice1"
               />
-              <label class="radio__label_dropdown" for="dropdownChoice1">
+              <label className="radio__label_dropdown" htmlFor="dropdownChoice1">
                 Новый
               </label>
             </div>
 
-            <div class="radio">
+            <div className="radio">
               <input
                 type="radio"
                 name="dropdown-radio"
-                class="radio__input"
+                className="radio__input"
                 id="dropdownChoice2"
               />
-              <label class="radio__label_dropdown" for="dropdownChoice2">
+              <label className="radio__label_dropdown" htmlFor="dropdownChoice2">
                 Расчет
               </label>
             </div>
 
-            <div class="radio">
+            <div className="radio">
               <input
                 type="radio"
                 name="dropdown-radio"
-                class="radio__input"
+                className="radio__input"
                 id="dropdownChoice3"
                 checked
               />
-              <label class="radio__label_dropdown" for="dropdownChoice3">
+              <label className="radio__label_dropdown" htmlFor="dropdownChoice3">
                 Подтвержден
               </label>
             </div>
 
-            <div class="radio">
+            <div className="radio">
               <input
                 type="radio"
                 name="dropdown-radio"
-                class="radio__input"
+                className="radio__input"
                 id="dropdownChoice4"
               />
-              <label class="radio__label_dropdown" for="dropdownChoice4">
+              <label className="radio__label_dropdown" htmlFor="dropdownChoice4">
                 Отложен
               </label>
             </div>
 
-            <div class="radio">
+            <div className="radio">
               <input
                 type="radio"
                 name="dropdown-radio"
-                class="radio__input"
+                className="radio__input"
                 id="dropdownChoice5"
               />
-              <label class="radio__label_dropdown" for="dropdownChoice5">
+              <label className="radio__label_dropdown" htmlFor="dropdownChoice5">
                 Выложен
               </label>
             </div>
 
-            <div class="radio">
+            <div className="radio">
               <input
                 type="radio"
                 name="dropdown-radio"
-                class="radio__input"
+                className="radio__input"
                 id="dropdownChoice6"
               />
-              <label class="radio__label_dropdown" for="dropdownChoice6">
+              <label className="radio__label_dropdown" htmlFor="dropdownChoice6">
                 Отменен
               </label>
             </div>
           </div>
         </div>
 
-        <div class="wrapper__elements wrapper__elements_space-between">
-          <div class="dropdown dropdown_page-number">
-            <div class="text-field">
+        <div className="wrapper__elements wrapper__elements_space-between">
+          <div className="dropdown dropdown_page-number">
+            <div className="text-field">
               <label
-                class="text-field__label"
-                for="text-field__input_page-number"
+                className="text-field__label"
+                htmlFor="text-field__input_page-number"
               >
                 Номер страницы
               </label>
               <input
                 id="text-field__input_page-number"
-                class="text-field__input"
+                className="text-field__input"
                 placeholder="Введите номер"
               />
             </div>
           </div>
 
-          <div class="dropdown dropdown_buttons">
+          <div className="dropdown dropdown_buttons">
             <label> Удалить n записей? </label>
-            <button class="button button_blue button_small button_full">
+            <button className="button button_blue button_small button_full">
               Удалить
             </button>
-            <button class="button button_white button_small button_full">
+            <button className="button button_white button_small button_full">
               Отмена
             </button>
           </div>
 
-          <div class="dropdown dropdown_buttons">
+          <div className="dropdown dropdown_buttons">
             <label> Выберите тему </label>
-            <button class="button button_blue button_small button_full">
+            <button className="button button_blue button_small button_full">
               <svg
-                class="icon"
+                className="icon"
                 viewBox="0 0 16 16"
                 fill="#8055FF"
                 strok="none"
@@ -698,9 +698,9 @@ function App() {
               </svg>
               Светлая
             </button>
-            <button class="button button_white button_small button_full">
+            <button className="button button_white button_small button_full">
               <svg
-                class="icon"
+                className="icon"
                 viewBox="0 0 16 16"
                 fill="#8055FF"
                 stroke="none"
