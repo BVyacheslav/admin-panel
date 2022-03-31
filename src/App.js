@@ -1,7 +1,7 @@
 import { ReactComponent as DeleteIcon } from "./icons/x-medium.svg";
 import { ReactComponent as LockedIcon } from "./icons/locked.svg";
 
-  import "./style/reset.css";
+import "./style/reset.css";
 import "./style/input.css";
 import "./style/search-bar.css";
 import "./style/checkbox-radio.css";
