@@ -1,5 +1,4 @@
-import { Input } from "./components/Input/Input";
-import { TextField } from "./components/TextField/TextField";
+import { InputWithLabel } from "./components/InputWithLabel/InputWithLabel";
 
 import "./style/reset.css";
 import "./style/input.css";
@@ -12,14 +11,14 @@ function App() {
   return (
     <div className="App">
       <div class="wrapper">
-        <TextField label="Дата и время заказа" placeholder="Введите" />
-        <TextField
+        <InputWithLabel label="Дата и время заказа" placeholder="Введите" />
+        <InputWithLabel
           label="Дата и время заказа"
           placeholder="Введите"
           defaultValue="06.12.2021"
           error
         />
-        <TextField
+        <InputWithLabel
           label="Дата и время заказа"
           placeholder="Введите"
           defaultValue="06.12.2021"

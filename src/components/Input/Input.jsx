@@ -5,8 +5,7 @@ import { ReactComponent as LockedIcon } from "../../icons/locked.svg";
 
 import styles from "./Input.module.css";
 
-export const Input = ({ children, className, ...props }) => {
-  const { value, defaultValue, disabled, error } = props;
+export const Input = ({ children, className, value, defaultValue, disabled, error, ...props }) => {
 
   const inputClass = cx(styles.input, className, {
     [styles.error]: error,
@@ -15,7 +14,7 @@ export const Input = ({ children, className, ...props }) => {
 
   return (
     <div className={styles.inputWrapper}>
-      <input class={inputClass} {...props} />
+      <input class={inputClass} value={value} defaultValue={defaultValue} disabled={disabled} {...props} />
       {(value || defaultValue) && !disabled && (
         <button className={styles.deleteIcon}>
           <DeleteIcon />
