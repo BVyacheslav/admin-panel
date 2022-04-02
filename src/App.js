@@ -1,6 +1,7 @@
 import { InputWithLabel } from "./components/InputWithLabel/InputWithLabel";
 import { Input } from "./components/Input/Input";
 import { Checkbox } from "./components/Checkbox/Checkbox";
+import { Radio } from "./components/Radio/Radio";
 
 import "./style/reset.css";
 import "./style/input.css";
@@ -40,46 +41,8 @@ function App() {
       </div>
 
       <div class="wrapper__radio">
-        <div class="radio">
-          <input
-            type="radio"
-            name="value"
-            class="radio__input"
-            id="valueChoice1"
-          />
-          <label class="radio__label" for="valueChoice1">
-            <svg
-              class="radio__icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="8" cy="8" r="4" stroke="none" />
-            </svg>
-          </label>
-        </div>
-
-        <div class="radio">
-          <input
-            type="radio"
-            name="value"
-            class="radio__input"
-            id="valueChoice2"
-            checked
-          />
-          <label class="radio__label" for="valueChoice2">
-            <svg
-              class="radio__icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="8" cy="8" r="4" stroke="none" />
-            </svg>
-          </label>
-        </div>
+        <Radio name="value" id="valueChoice1" />
+        <Radio name="value" id="valueChoice2" defaultChecked />
       </div>
 
       <div class="wrapper__button">
