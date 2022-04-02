@@ -17,6 +17,10 @@
   outline: none;
 }
 
+.search {
+  padding: 4px 25px 4px 32px;
+}
+
 .input::placeholder {
   color: #bad8f5;
 }
@@ -56,4 +60,12 @@
   position: absolute;
   right: 10px;
   fill: #000000;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 9px;
+  stroke: #459df5;
 }

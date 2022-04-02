@@ -3,7 +3,7 @@ import { Input } from "../Input/Input";
 
 import styles from "./InputWithLabel.module.css";
 
-export const InputWithLabel = ({ children, className, label, error, ...props }) => {
+export const InputWithLabel = ({ children, className, label, error, search, ...props }) => {
   const { value, defaultValue, disabled } = props;
 
   return (
@@ -14,6 +14,7 @@ export const InputWithLabel = ({ children, className, label, error, ...props }) 
         defaultValue={defaultValue}
         disabled={disabled}
         error={error}
+        search={search}
         {...props}
       />
     </label>

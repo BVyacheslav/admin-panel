@@ -1,4 +1,5 @@
 import { InputWithLabel } from "./components/InputWithLabel/InputWithLabel";
+import { Input } from "./components/Input/Input";
 
 import "./style/reset.css";
 import "./style/input.css";
@@ -28,52 +29,8 @@ function App() {
       </div>
 
       <div class="wrapper__search-bar">
-        <div class="search-bar">
-          <div class="search-bar__input-wrapper">
-            <svg
-              class="search-bar__icon"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="#459DF5"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M10.036 10.036a5 5 0 1 0-7.071-7.072 5 5 0 0 0 7.07 7.072Zm0 0L14 14m0 0 .5-.5-3-3M14 14l-.5.5-3-3" />
-            </svg>
-            <input
-              class="search-bar__input"
-              placeholder="Номер заказа или ФИО"
-            />
-          </div>
-        </div>
-
-        <div class="search-bar">
-          <div class="search-bar__input-wrapper">
-            <svg
-              class="search-bar__icon"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="#459DF5"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M10.036 10.036a5 5 0 1 0-7.071-7.072 5 5 0 0 0 7.07 7.072Zm0 0L14 14m0 0 .5-.5-3-3M14 14l-.5.5-3-3" />
-            </svg>
-            <input
-              class="search-bar__input"
-              value="50744"
-              placeholder="Номер заказа или ФИО"
-            />
-            <button class="search-bar__delete">
-              <svg
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="#BAD8F5"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12.5 3.5L3.5 12.5M3.5 3.5L12.5 12.5" fill="none" />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <Input search />
+        <Input search defaultValue="50744" placeholder="Номер заказа или ФИО" />
       </div>
 
       <div class="wrapper__checkbox">
