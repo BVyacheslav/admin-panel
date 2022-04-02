@@ -1,5 +1,6 @@
 import { InputWithLabel } from "./components/InputWithLabel/InputWithLabel";
 import { Input } from "./components/Input/Input";
+import { Checkbox } from "./components/Checkbox/Checkbox";
 
 import "./style/reset.css";
 import "./style/input.css";
@@ -34,47 +35,8 @@ function App() {
       </div>
 
       <div class="wrapper__checkbox">
-        <div class="checkbox">
-          <input type="checkbox" class="checkbox__input" id="valueCheck1" />
-          <label class="checkbox__label" for="valueCheck1">
-            <svg
-              class="checkbox__icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </label>
-        </div>
-
-        <div class="checkbox">
-          <input
-            type="checkbox"
-            class="checkbox__input"
-            id="valueCheck2"
-            checked
-          />
-
-          <label class="checkbox__label" for="valueCheck2">
-            <svg
-              class="checkbox__icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </label>
-        </div>
+        <Checkbox />
+        <Checkbox defaultChecked />
       </div>
 
       <div class="wrapper__radio">
