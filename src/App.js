@@ -31,7 +31,7 @@ function App() {
       </div>
 
       <div class="wrapper__search-bar">
-        <Input search />
+        <Input search placeholder="Номер заказа или ФИО" />
         <Input search defaultValue="50744" placeholder="Номер заказа или ФИО" />
       </div>
 
