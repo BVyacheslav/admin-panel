@@ -2,6 +2,9 @@ import { InputWithLabel } from "./components/InputWithLabel/InputWithLabel";
 import { Input } from "./components/Input/Input";
 import { Checkbox } from "./components/Checkbox/Checkbox";
 import { Radio } from "./components/Radio/Radio";
+import { Button } from "./components/Button/Button";
+
+import { ReactComponent as CheckmarkIcon } from "./icons/checkmark.svg";
 
 import "./style/reset.css";
 import "./style/input.css";
@@ -47,188 +50,53 @@ function App() {
 
       <div class="wrapper__button">
         <div class="button-box">
-          <button class="button button_white button_medium button-box__button">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_white button_medium button-box__button">
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_white button_only-icon button-box__button">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
+          <Button variant="white" size="medium" icon={CheckmarkIcon}>
+            Text here
+          </Button>
+          <Button variant="white" size="medium">
+            Text here
+          </Button>
+          <Button variant="white" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
         <div class="button-box">
-          <button class="button button_blue button_medium button-box__button">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_blue button_medium button-box__button">
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_blue button_only-icon">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
+          <Button variant="blue" size="medium" icon={CheckmarkIcon}>
+            Text here
+          </Button>
+          <Button variant="blue" size="medium">
+            Text here
+          </Button>
+          <Button variant="blue" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
         <div class="button-box">
-          <button class="button button_black button_medium button-box__button">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_black button_medium button-box__button">
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_black button_only-icon">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
+          <Button variant="black" size="medium" icon={CheckmarkIcon}>
+            Text here
+          </Button>
+          <Button variant="black" size="medium">
+            Text here
+          </Button>
+          <Button variant="black" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
         <div class="button-box">
-          <button class="button button_white button_small button-box__button">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_white button_small button-box__button">
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_white button_only-icon-small">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
+          <Button variant="white" size="small" icon={CheckmarkIcon}>
+            Text here
+          </Button>
+          <Button variant="white" size="small">
+            Text here
+          </Button>
+          <Button variant="white" size="small" icon={CheckmarkIcon}></Button>
         </div>
 
         <div class="button-box">
-          <button class="button button_blue button_small button-box__button">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_blue button_small button-box__button">
-            <span class="button__text">Text here</span>
-          </button>
-
-          <button class="button button_blue button_only-icon-small">
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              fill="#ffffff"
-              stroke="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                stroke="none"
-              />
-            </svg>
-          </button>
+          <Button variant="blue" size="small" icon={CheckmarkIcon}>
+            Text here
+          </Button>
+          <Button variant="blue" size="small">
+            Text here
+          </Button>
+          <Button variant="blue" size="small" icon={CheckmarkIcon}></Button>
         </div>
       </div>
 
