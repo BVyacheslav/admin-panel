@@ -20,12 +20,12 @@ import "./style/dropdown.css";
 
 function App() {
   const dropdownCheckbox = [
-    { name: "Новый", checked: false },
-    { name: "Расчет", checked: false },
-    { name: "Подтвержден", checked: false },
-    { name: "Отложен", checked: false },
-    { name: "Выполнен", checked: false },
-    { name: "Отменен", checked: false },
+    { label: "Новый", checked: false },
+    { label: "Расчет", checked: false },
+    { label: "Подтвержден", checked: false },
+    { label: "Отложен", checked: false },
+    { label: "Выполнен", checked: false },
+    { label: "Отменен", checked: false },
   ];
 
   const [radioChoice, setRadioChoice] = useState("dropdownChoice3");
@@ -136,10 +136,10 @@ function App() {
           <div class="dropdown">
             {checkChoices.map((checkChoice, index) => (
               <CheckboxWithLabel
-                key={checkChoice.name}
+                key={checkChoice.label}
                 checked={checkChoice.checked}
                 onChange={() => handleChangeCheck(index)}
-                label={checkChoice.name}
+                label={checkChoice.label}
                 index={index}
               />
             ))}
