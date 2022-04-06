@@ -1,8 +1,8 @@
 import { Button } from "../Button/Button";
 import cx from "classnames";
-import styles from "./DropdownDeleteButtons.module.css";
+import styles from "./DropdownDelete.module.css";
 
-export const DropdownDeleteButtons = ({ className, ...props }) => {
+export const DropdownDelete = ({ className, ...props }) => {
   return (
     <div className={cx(styles.dropdown, className)}>
       <label> Удалить n записей? </label>

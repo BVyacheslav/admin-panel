@@ -6,7 +6,7 @@ import { Button } from "./components/Button/Button";
 import { DropdownCheckbox } from "./components/DropdownCheckbox/DropdownCheckbox";
 import { DropdownRadio } from "./components/DropdownRadio/DropdownRadio";
 import { DropdownPageNumber } from "./components/DropdownPageNumber/DropdownPageNumber";
-import { DropdownDeleteButtons } from "./components/DropdownDeleteButtons/DropdownDeleteButtons";
+import { DropdownDelete } from "./components/DropdownDelete/DropdownDelete";
 import { DropdownSelectTheme } from "./components/DropdownSelectTheme/DropdownSelectTheme";
 
 import { ReactComponent as CheckmarkIcon } from "./icons/checkmark.svg";
@@ -113,7 +113,7 @@ function App() {
 
         <div class="wrapper__elements wrapper__elements_space-between">
           <DropdownPageNumber />
-          <DropdownDeleteButtons />
+          <DropdownDelete />
           <DropdownSelectTheme />
         </div>
       </div>
