@@ -8,3 +8,7 @@
 .checkbox {
   margin-right: 8px;
 }
+
+.checked {
+  color: #459df5;
+}

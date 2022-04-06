@@ -9,3 +9,7 @@
   position: absolute;
   opacity: 0;
 }
+
+.checked {
+  color: #459df5;
+}

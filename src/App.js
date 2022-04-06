@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { InputWithLabel } from "./components/InputWithLabel/InputWithLabel";
 import { Input } from "./components/Input/Input";
 import { Checkbox } from "./components/Checkbox/Checkbox";
@@ -18,6 +19,32 @@ import "./style/button.css";
 import "./style/dropdown.css";
 
 function App() {
+  const dropdownCheckbox = [
+    { name: "Новый", checked: false },
+    { name: "Расчет", checked: false },
+    { name: "Подтвержден", checked: false },
+    { name: "Отложен", checked: false },
+    { name: "Выполнен", checked: false },
+    { name: "Отменен", checked: false },
+  ];
+
+  const [radioChoice, setRadioChoice] = useState("dropdownChoice3");
+  const [checkChoices, setCheckChoices] = useState(dropdownCheckbox);
+
+  function handleChangeRadio(e) {
+    setRadioChoice(e.target.id);
+  }
+
+  const handleChangeCheck = (index) => {
+    setCheckChoices(
+      checkChoices.map((checkbox, currentIndex) =>
+        currentIndex === index
+          ? { ...checkbox, checked: !checkbox.checked }
+          : checkbox
+      )
+    );
+  };
+
   return (
     <div className="App">
       <div class="wrapper">
@@ -107,21 +134,60 @@ function App() {
       <div class="wrapper__dropdown">
         <div class="wrapper__elements">
           <div class="dropdown">
-            <CheckboxWithLabel label="Новый" />
-            <CheckboxWithLabel label="Расчет" />
-            <CheckboxWithLabel label="Подтвержден" defaultChecked />
-            <CheckboxWithLabel label="Отложен" />
-            <CheckboxWithLabel label="Выполнен" />
-            <CheckboxWithLabel label="Отменен" />
+            {checkChoices.map((checkChoice, index) => (
+              <CheckboxWithLabel
+                key={checkChoice.name}
+                checked={checkChoice.checked}
+                onChange={() => handleChangeCheck(index)}
+                label={checkChoice.name}
+                index={index}
+              />
+            ))}
           </div>
 
           <div class="dropdown">
-            <RadioWithLabel label="Новый" />
-            <RadioWithLabel label="Расчет" />
-            <RadioWithLabel label="Подтвержден" defaultChecked />
-            <RadioWithLabel label="Отложен" />
-            <RadioWithLabel label="Выполнен" />
-            <RadioWithLabel label="Отменен" />
+            <RadioWithLabel
+              label="Новый"
+              name="dropdownRadio"
+              id="dropdownChoice1"
+              checked={radioChoice === "dropdownChoice1"}
+              onChange={handleChangeRadio}
+            />
+            <RadioWithLabel
+              label="Расчет"
+              name="dropdownRadio"
+              id="dropdownChoice2"
+              checked={radioChoice === "dropdownChoice2"}
+              onChange={handleChangeRadio}
+            />
+            <RadioWithLabel
+              label="Подтвержден"
+              name="dropdownRadio"
+              id="dropdownChoice3"
+              checked={radioChoice === "dropdownChoice3"}
+              onChange={handleChangeRadio}
+            />
+            <RadioWithLabel
+              label="Отложен"
+              name="dropdownRadio"
+              id="dropdownChoice4"
+              checked={radioChoice === "dropdownChoice4"}
+              onChange={handleChangeRadio}
+            />
+            <RadioWithLabel
+              label="Выполнен"
+              name="dropdownRadio"
+              id="dropdownChoice5"
+              checked={radioChoice === "dropdownChoice5"}
+              onChange={handleChangeRadio}
+            />
+            <RadioWithLabel
+              label="Отменен"
+              name="dropdownRadio"
+              id="dropdownChoice6"
+              checked={radioChoice === "dropdownChoice6"}
+              onChange={handleChangeRadio}
+            />
           </div>
         </div>
 
@@ -151,21 +217,6 @@ function App() {
             <Button variant="white" size="small" icon={MoonIcon} fullWidth>
               Темная
             </Button>
-            {/* <button class="button button_white button_small button_full">
-              <svg
-                class="icon"
-                viewBox="0 0 16 16"
-                fill="#8055FF"
-                stroke="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8 15C12.0269 15 15.5 11.5021 15 7.5C14.7688 10.0468 12.6071 12 10 12C7.23858 12 5 9.76142 5 7C5 4.23858 7.23858 2 10 2C11 2 12 2.5 12 2.5C11 1.5 10 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z"
-                  stroke="none"
-                />
-              </svg>
-              Темная
-            </button> */}
           </div>
         </div>
       </div>
