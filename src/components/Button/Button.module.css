@@ -13,6 +13,9 @@
   line-height: 16px;
   cursor: pointer;
   background: none;
+}
+
+.buttonBox {
   margin-bottom: 16px;
 }
 
@@ -68,6 +71,6 @@
   padding: 4px;
 }
 
-.button_full {
+.fullWidth {
   width: 100%;
 }

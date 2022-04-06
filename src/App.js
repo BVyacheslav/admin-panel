@@ -3,8 +3,12 @@ import { Input } from "./components/Input/Input";
 import { Checkbox } from "./components/Checkbox/Checkbox";
 import { Radio } from "./components/Radio/Radio";
 import { Button } from "./components/Button/Button";
+import { CheckboxWithLabel } from "./components/CheckboxWithLabel/CheckboxWithLabel";
+import { RadioWithLabel } from "./components/RadioWithLabel/RadioWithLabel";
 
 import { ReactComponent as CheckmarkIcon } from "./icons/checkmark.svg";
+import { ReactComponent as SunIcon } from "./icons/sun.svg";
+import { ReactComponent as MoonIcon } from "./icons/moon.svg";
 
 import "./style/reset.css";
 import "./style/input.css";
@@ -50,50 +54,50 @@ function App() {
 
       <div class="wrapper__button">
         <div class="button-box">
-          <Button variant="white" size="medium" icon={CheckmarkIcon}>
+          <Button variant="white" size="medium" icon={CheckmarkIcon} buttonBox>
             Text here
           </Button>
-          <Button variant="white" size="medium">
+          <Button variant="white" size="medium" buttonBox>
             Text here
           </Button>
           <Button variant="white" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
         <div class="button-box">
-          <Button variant="blue" size="medium" icon={CheckmarkIcon}>
+          <Button variant="blue" size="medium" icon={CheckmarkIcon} buttonBox>
             Text here
           </Button>
-          <Button variant="blue" size="medium">
+          <Button variant="blue" size="medium" buttonBox>
             Text here
           </Button>
           <Button variant="blue" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
         <div class="button-box">
-          <Button variant="black" size="medium" icon={CheckmarkIcon}>
+          <Button variant="black" size="medium" icon={CheckmarkIcon} buttonBox>
             Text here
           </Button>
-          <Button variant="black" size="medium">
+          <Button variant="black" size="medium" buttonBox>
             Text here
           </Button>
           <Button variant="black" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
         <div class="button-box">
-          <Button variant="white" size="small" icon={CheckmarkIcon}>
+          <Button variant="white" size="small" icon={CheckmarkIcon} buttonBox>
             Text here
           </Button>
-          <Button variant="white" size="small">
+          <Button variant="white" size="small" buttonBox>
             Text here
           </Button>
           <Button variant="white" size="small" icon={CheckmarkIcon}></Button>
         </div>
 
         <div class="button-box">
-          <Button variant="blue" size="small" icon={CheckmarkIcon}>
+          <Button variant="blue" size="small" icon={CheckmarkIcon} buttonBox>
             Text here
           </Button>
-          <Button variant="blue" size="small">
+          <Button variant="blue" size="small" buttonBox>
             Text here
           </Button>
           <Button variant="blue" size="small" icon={CheckmarkIcon}></Button>
@@ -103,299 +107,51 @@ function App() {
       <div class="wrapper__dropdown">
         <div class="wrapper__elements">
           <div class="dropdown">
-            <div class="checkbox">
-              <input
-                type="checkbox"
-                class="checkbox__input"
-                id="dropdownCheck1"
-              />
-              <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck1"
-              >
-                <svg
-                  class="checkbox__icon"
-                  viewBox="0 0 16 16"
-                  fill="#ffffff"
-                  stroke="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                    stroke="none"
-                  />
-                </svg>
-                Новый
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <input
-                type="checkbox"
-                class="checkbox__input"
-                id="dropdownCheck2"
-              />
-              <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck2"
-              >
-                <svg
-                  class="checkbox__icon"
-                  viewBox="0 0 16 16"
-                  fill="#ffffff"
-                  stroke="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                    stroke="none"
-                  />
-                </svg>
-                Расчет
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <input
-                type="checkbox"
-                class="checkbox__input"
-                id="dropdownCheck3"
-                checked
-              />
-              <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck3"
-              >
-                <svg
-                  class="checkbox__icon"
-                  viewBox="0 0 16 16"
-                  fill="#ffffff"
-                  stroke="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                    stroke="none"
-                  />
-                </svg>
-                Подтвержден
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <input
-                type="checkbox"
-                class="checkbox__input"
-                id="dropdownCheck4"
-              />
-              <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck4"
-              >
-                <svg
-                  class="checkbox__icon"
-                  viewBox="0 0 16 16"
-                  fill="#ffffff"
-                  stroke="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                    stroke="none"
-                  />
-                </svg>
-                Отложен
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <input
-                type="checkbox"
-                class="checkbox__input"
-                id="dropdownCheck5"
-              />
-              <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck5"
-              >
-                <svg
-                  class="checkbox__icon"
-                  viewBox="0 0 16 16"
-                  fill="#ffffff"
-                  stroke="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                    stroke="none"
-                  />
-                </svg>
-                Выполнен
-              </label>
-            </div>
-
-            <div class="checkbox">
-              <input
-                type="checkbox"
-                class="checkbox__input"
-                id="dropdownCheck6"
-              />
-              <label
-                class="checkbox__label checkbox__label_dropdown"
-                for="dropdownCheck6"
-              >
-                <svg
-                  class="checkbox__icon"
-                  viewBox="0 0 16 16"
-                  fill="#ffffff"
-                  stroke="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M7 10L4.5 6L3 7L7 14L14.5 3.5V3L13 2L7 10Z"
-                    stroke="none"
-                  />
-                </svg>
-                Отменен
-              </label>
-            </div>
+            <CheckboxWithLabel label="Новый" />
+            <CheckboxWithLabel label="Расчет" />
+            <CheckboxWithLabel label="Подтвержден" defaultChecked />
+            <CheckboxWithLabel label="Отложен" />
+            <CheckboxWithLabel label="Выполнен" />
+            <CheckboxWithLabel label="Отменен" />
           </div>
 
           <div class="dropdown">
-            <div class="radio">
-              <input
-                type="radio"
-                name="dropdown-radio"
-                class="radio__input"
-                id="dropdownChoice1"
-              />
-              <label class="radio__label_dropdown" for="dropdownChoice1">
-                Новый
-              </label>
-            </div>
-
-            <div class="radio">
-              <input
-                type="radio"
-                name="dropdown-radio"
-                class="radio__input"
-                id="dropdownChoice2"
-              />
-              <label class="radio__label_dropdown" for="dropdownChoice2">
-                Расчет
-              </label>
-            </div>
-
-            <div class="radio">
-              <input
-                type="radio"
-                name="dropdown-radio"
-                class="radio__input"
-                id="dropdownChoice3"
-                checked
-              />
-              <label class="radio__label_dropdown" for="dropdownChoice3">
-                Подтвержден
-              </label>
-            </div>
-
-            <div class="radio">
-              <input
-                type="radio"
-                name="dropdown-radio"
-                class="radio__input"
-                id="dropdownChoice4"
-              />
-              <label class="radio__label_dropdown" for="dropdownChoice4">
-                Отложен
-              </label>
-            </div>
-
-            <div class="radio">
-              <input
-                type="radio"
-                name="dropdown-radio"
-                class="radio__input"
-                id="dropdownChoice5"
-              />
-              <label class="radio__label_dropdown" for="dropdownChoice5">
-                Выложен
-              </label>
-            </div>
-
-            <div class="radio">
-              <input
-                type="radio"
-                name="dropdown-radio"
-                class="radio__input"
-                id="dropdownChoice6"
-              />
-              <label class="radio__label_dropdown" for="dropdownChoice6">
-                Отменен
-              </label>
-            </div>
+            <RadioWithLabel label="Новый" />
+            <RadioWithLabel label="Расчет" />
+            <RadioWithLabel label="Подтвержден" defaultChecked />
+            <RadioWithLabel label="Отложен" />
+            <RadioWithLabel label="Выполнен" />
+            <RadioWithLabel label="Отменен" />
           </div>
         </div>
 
         <div class="wrapper__elements wrapper__elements_space-between">
           <div class="dropdown dropdown_page-number">
-            <div class="text-field">
-              <label
-                class="text-field__label"
-                for="text-field__input_page-number"
-              >
-                Номер страницы
-              </label>
-              <input
-                id="text-field__input_page-number"
-                class="text-field__input"
-                placeholder="Введите номер"
-              />
-            </div>
+            <InputWithLabel
+              label="Номер страницы"
+              placeholder="Введите номер"
+            />
           </div>
 
           <div class="dropdown dropdown_buttons">
             <label> Удалить n записей? </label>
-            <button class="button button_blue button_small button_full">
+            <Button variant="blue" size="small" fullWidth>
               Удалить
-            </button>
-            <button class="button button_white button_small button_full">
+            </Button>
+            <Button variant="white" size="small" fullWidth>
               Отмена
-            </button>
+            </Button>
           </div>
 
           <div class="dropdown dropdown_buttons">
             <label> Выберите тему </label>
-            <button class="button button_blue button_small button_full">
-              <svg
-                class="icon"
-                viewBox="0 0 16 16"
-                fill="#8055FF"
-                strok="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="8" cy="8" r="4" stroke="none" />
-                <path d="M15 9L16 8L15 7H13V9H15Z" stroke="none" />
-                <path d="M1 9L0 8L1 7H3V9H1Z" stroke="none" />
-                <path d="M7 15L8 16L9 15V13H7V15Z" stroke="none" />
-                <path d="M7 1L8 0L9 1V3H7V1Z" stroke="none" />
-                <path
-                  d="M12.5 14H14L14 12.5L12.5 11L11 12.5L12.5 14Z"
-                  stroke="none"
-                />
-                <path d="M2 3.5L2 2L3.5 2L5 3.5L3.5 5L2 3.5Z" stroke="none" />
-                <path
-                  d="M3.5 14H2L2 12.5L3.5 11L5 12.5L3.5 14Z"
-                  stroke="none"
-                />
-                <path
-                  d="M14 3.5V2L12.5 2L11 3.5L12.5 5L14 3.5Z"
-                  stroke="none"
-                />
-              </svg>
+            <Button variant="blue" size="small" icon={SunIcon} fullWidth>
               Светлая
-            </button>
-            <button class="button button_white button_small button_full">
+            </Button>
+            <Button variant="white" size="small" icon={MoonIcon} fullWidth>
+              Темная
+            </Button>
+            {/* <button class="button button_white button_small button_full">
               <svg
                 class="icon"
                 viewBox="0 0 16 16"
@@ -409,7 +165,7 @@ function App() {
                 />
               </svg>
               Темная
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
