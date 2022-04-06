@@ -6,8 +6,16 @@ import { ReactComponent as SearchIcon } from "../../icons/search.svg";
 
 import styles from "./Input.module.css";
 
-export const Input = ({ children, className, value, defaultValue, disabled, error, search, ...props }) => {
-
+export const Input = ({
+  children,
+  className,
+  value,
+  defaultValue,
+  disabled,
+  error,
+  search,
+  ...props
+}) => {
   const inputClass = cx(styles.input, className, {
     [styles.error]: error,
     [styles.locked]: disabled,
@@ -16,7 +24,13 @@ export const Input = ({ children, className, value, defaultValue, disabled, erro
 
   return (
     <div className={styles.inputWrapper}>
-      <input class={inputClass} value={value} defaultValue={defaultValue} disabled={disabled} {...props} />
+      <input
+        className={inputClass}
+        value={value}
+        defaultValue={defaultValue}
+        disabled={disabled}
+        {...props}
+      />
       {(value || defaultValue) && !disabled && (
         <button className={styles.deleteIcon}>
           <DeleteIcon />
