@@ -5,6 +5,7 @@
   border: 1px solid #bad8f5;
   appearance: none;
   margin: 0;
+  background-color: #ffffff;
 }
 
 .checkbox:checked {
