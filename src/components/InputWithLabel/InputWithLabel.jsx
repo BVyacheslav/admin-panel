@@ -1,4 +1,3 @@
-import cx from "classnames";
 import { Input } from "../Input/Input";
 
 import styles from "./InputWithLabel.module.css";
@@ -14,7 +13,7 @@ export const InputWithLabel = ({
   const { value, defaultValue, disabled } = props;
 
   return (
-    <label className={cx(styles.label, className)}>
+    <label className={className}>
       {label}
       <Input
         value={value}
