@@ -16,14 +16,14 @@ export const Input = ({
   search,
   ...props
 }) => {
-  const inputClass = cx(styles.input, className, {
+  const inputClass = cx(styles.input, {
     [styles.error]: error,
     [styles.locked]: disabled,
     [styles.search]: search,
   });
 
   return (
-    <div className={styles.inputWrapper}>
+    <div className={cx(styles.inputWrapper, className)}>
       <input
         className={inputClass}
         value={value}

@@ -49,51 +49,76 @@ export const UiKit = ({ className, ...props }) => {
       </div>
 
       <div className={styles.wrapperButton}>
-        <div className={styles.buttonBox}>
-          <Button variant="white" size="medium" icon={CheckmarkIcon} buttonBox>
+        <div className={styles.box}>
+          <Button
+            variant="white"
+            size="medium"
+            icon={CheckmarkIcon}
+            className={styles.buttonBox}
+          >
             Text here
           </Button>
-          <Button variant="white" size="medium" buttonBox>
+          <Button variant="white" size="medium" className={styles.buttonBox}>
             Text here
           </Button>
           <Button variant="white" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
-        <div className={styles.buttonBox}>
-          <Button variant="blue" size="medium" icon={CheckmarkIcon} buttonBox>
+        <div className={styles.box}>
+          <Button
+            variant="blue"
+            size="medium"
+            icon={CheckmarkIcon}
+            className={styles.buttonBox}
+          >
             Text here
           </Button>
-          <Button variant="blue" size="medium" buttonBox>
+          <Button variant="blue" size="medium" className={styles.buttonBox}>
             Text here
           </Button>
           <Button variant="blue" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
-        <div className={styles.buttonBox}>
-          <Button variant="black" size="medium" icon={CheckmarkIcon} buttonBox>
+        <div className={styles.box}>
+          <Button
+            variant="black"
+            size="medium"
+            icon={CheckmarkIcon}
+            className={styles.buttonBox}
+          >
             Text here
           </Button>
-          <Button variant="black" size="medium" buttonBox>
+          <Button variant="black" size="medium" className={styles.buttonBox}>
             Text here
           </Button>
           <Button variant="black" size="medium" icon={CheckmarkIcon}></Button>
         </div>
 
-        <div className={styles.buttonBox}>
-          <Button variant="white" size="small" icon={CheckmarkIcon} buttonBox>
+        <div className={styles.box}>
+          <Button
+            variant="white"
+            size="small"
+            icon={CheckmarkIcon}
+            className={styles.buttonBox}
+          >
             Text here
           </Button>
-          <Button variant="white" size="small" buttonBox>
+          <Button variant="white" size="small" className={styles.buttonBox}>
             Text here
           </Button>
           <Button variant="white" size="small" icon={CheckmarkIcon}></Button>
         </div>
 
-        <div className={styles.buttonBox}>
-          <Button variant="blue" size="small" icon={CheckmarkIcon} buttonBox>
+        <div className={styles.box}>
+          <Button
+            variant="blue"
+            size="small"
+            icon={CheckmarkIcon}
+            className={styles.buttonBox}
+          >
             Text here
           </Button>
-          <Button variant="blue" size="small" buttonBox>
+          <Button variant="blue" size="small" className={styles.buttonBox}>
             Text here
           </Button>
           <Button variant="blue" size="small" icon={CheckmarkIcon}></Button>

@@ -67,12 +67,16 @@
   border-radius: 5px;
 }
 
-.buttonBox {
+.box {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-right: 40px;
   margin-bottom: 32px;
+}
+
+.buttonBox {
+  margin-bottom: 16px;
 }
 
 .wrapperDropdown {
