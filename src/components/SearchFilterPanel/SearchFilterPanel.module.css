@@ -1,0 +1,16 @@
+.searchFilterPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.searchFilter {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  width: 320px;
+  margin-right: 1rem;
+}
