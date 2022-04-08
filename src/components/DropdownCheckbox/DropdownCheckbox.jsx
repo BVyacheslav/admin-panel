@@ -15,7 +15,7 @@ const STATUSES = [
 const xor = (arr, item) =>
   arr.includes(item) ? arr.filter((i) => i !== item) : arr.concat(item);
 
-export const DropdownCheckbox = ({ className, ...props }) => {
+export const DropdownCheckbox = ({ className }) => {
   const [checkChoices, setCheckChoices] = useState([]);
 
   const handleChange = ({ target: { value } }) => {

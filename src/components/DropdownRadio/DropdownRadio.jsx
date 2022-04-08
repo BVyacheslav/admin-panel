@@ -3,7 +3,7 @@ import { RadioWithLabel } from "../RadioWithLabel/RadioWithLabel";
 import cx from "classnames";
 import styles from "./DropdownRadio.module.css";
 
-export const DropdownRadio = ({ className, ...props }) => {
+export const DropdownRadio = ({ className }) => {
   const [radioChoice, setRadioChoice] = useState("dropdownChoice3");
 
   function handleChangeRadio(e) {

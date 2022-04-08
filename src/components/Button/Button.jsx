@@ -9,7 +9,6 @@ export const Button = ({
   icon: Icon,
   size,
   fullWidth,
-  ...props
 }) => {
   const buttonClass = cx(styles.button, className, {
     [styles[`${variant}`]]: true,

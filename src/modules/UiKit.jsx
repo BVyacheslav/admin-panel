@@ -14,7 +14,7 @@ import { ReactComponent as CheckmarkIcon } from "../icons/checkmark.svg";
 import cx from "classnames";
 import styles from "./UiKit.module.css";
 
-export const UiKit = ({ className, ...props }) => {
+export const UiKit = ({ className }) => {
   return (
     <div className={cx(styles.wrapper, className)}>
       <div className={styles.wrapperInput}>
