@@ -1,4 +1,4 @@
-import { UiKit } from "./modules/UiKit";
+import { UiKit } from "./modules/UiKit/UiKit";
 
 import "./style/reset.css";
 

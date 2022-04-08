@@ -1,15 +1,15 @@
-import { InputWithLabel } from "../components/";
-import { Input } from "../components/";
-import { Checkbox } from "../components/";
-import { Radio } from "../components/";
-import { Button } from "../components/";
-import { DropdownCheckbox } from "../components/";
-import { DropdownRadio } from "../components/";
-import { DropdownPageNumber } from "../components/";
-import { DropdownDelete } from "../components/";
-import { DropdownSelectTheme } from "../components/";
+import { InputWithLabel } from "../../components";
+import { Input } from "../../components";
+import { Checkbox } from "../../components";
+import { Radio } from "../../components";
+import { Button } from "../../components";
+import { DropdownCheckbox } from "./components/DropdownCheckbox/DropdownCheckbox";
+import { DropdownRadio } from "./components/DropdownRadio/DropdownRadio";
+import { DropdownPageNumber } from "./components/DropdownPageNumber/DropdownPageNumber";
+import { DropdownDelete } from "./components/DropdownDelete/DropdownDelete";
+import { DropdownSelectTheme } from "./components/DropdownSelectTheme/DropdownSelectTheme";
 
-import { ReactComponent as CheckmarkIcon } from "../icons/checkmark.svg";
+import { ReactComponent as CheckmarkIcon } from "../../icons/checkmark.svg";
 
 import cx from "classnames";
 import styles from "./UiKit.module.css";

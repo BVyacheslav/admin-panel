@@ -1,11 +1,6 @@
 export { Button } from "./Button/Button";
 export { Checkbox } from "./Checkbox/Checkbox";
 export { CheckboxWithLabel } from "./CheckboxWithLabel/CheckboxWithLabel";
-export { DropdownCheckbox } from "./DropdownCheckbox/DropdownCheckbox";
-export { DropdownDelete } from "./DropdownDelete/DropdownDelete";
-export { DropdownPageNumber } from "./DropdownPageNumber/DropdownPageNumber";
-export { DropdownRadio } from "./DropdownRadio/DropdownRadio";
-export { DropdownSelectTheme } from "./DropdownSelectTheme/DropdownSelectTheme";
 export { Input } from "./Input/Input";
 export { InputWithLabel } from "./InputWithLabel/InputWithLabel";
 export { Radio } from "./Radio/Radio";

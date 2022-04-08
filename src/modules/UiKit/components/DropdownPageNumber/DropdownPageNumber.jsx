@@ -1,4 +1,4 @@
-import { InputWithLabel } from "../InputWithLabel/InputWithLabel";
+import { InputWithLabel } from "../../../../components";
 import cx from "classnames";
 import styles from "./DropdownPageNumber.module.css";
 

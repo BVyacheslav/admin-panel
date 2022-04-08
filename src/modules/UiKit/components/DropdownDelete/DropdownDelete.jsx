@@ -1,4 +1,4 @@
-import { Button } from "../Button/Button";
+import { Button } from "../../../../components";
 import cx from "classnames";
 import styles from "./DropdownDelete.module.css";
 

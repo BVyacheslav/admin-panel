@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CheckboxWithLabel } from "../CheckboxWithLabel/CheckboxWithLabel";
+import { CheckboxWithLabel } from "../../../../components";
 import cx from "classnames";
 import styles from "./DropdownCheckbox.module.css";
 

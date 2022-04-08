@@ -1,6 +1,6 @@
-import { Button } from "../Button/Button";
-import { ReactComponent as SunIcon } from "../../icons/sun.svg";
-import { ReactComponent as MoonIcon } from "../../icons/moon.svg";
+import { Button } from "../../../../components/Button/Button";
+import { ReactComponent as SunIcon } from "../../../../icons/sun.svg";
+import { ReactComponent as MoonIcon } from "../../../../icons/moon.svg";
 import cx from "classnames";
 import styles from "./DropdownSelectTheme.module.css";
 
