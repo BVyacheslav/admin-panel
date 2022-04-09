@@ -1,20 +1,20 @@
+import { LaptopsTableContainer } from "../../../containers";
+import { SearchFilterPanelContainer } from "../../../containers";
+
+import { Header } from "../..";
+import { FilterPanel } from "../..";
+
 import cx from "classnames";
 
 import styles from "./LaptopsPage.module.css";
-import { LaptopsTable } from "../..";
-import { Header } from "../..";
-import { SearchFilterPanel } from "../..";
-import { FilterPanel } from "../..";
 
 export const LaptopsPage = ({ className }) => {
-  const laptopsPageClass = cx(styles.laptopsPage, className, {});
-
   return (
-    <div className={laptopsPageClass}>
+    <div className={cx(styles.laptopsPage, className)}>
       <Header>Список заказов</Header>
-      <SearchFilterPanel />
+      <SearchFilterPanelContainer />
       <FilterPanel />
-      <LaptopsTable />
+      <LaptopsTableContainer />
     </div>
   );
 };

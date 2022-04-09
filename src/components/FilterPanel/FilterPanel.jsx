@@ -12,7 +12,7 @@ export const FilterPanel = ({ className }) => {
         <InputWithLabel
           className={styles.dateStart}
           label="Дата оформления"
-          value="20.01.2021"
+          defaultValue="20.01.2021"
           placeholder="Введите"
         />
         <Input className={styles.dateFinish} placeholder="dd.mm.dddd" />
@@ -20,14 +20,14 @@ export const FilterPanel = ({ className }) => {
         <InputWithLabel
           className={styles.status}
           label="Статус заказа"
-          value="Подтвержден"
+          defaultValue="Подтвержден"
           placeholder="Нажмите для выбора"
         />
 
         <InputWithLabel
           className={styles.priceStart}
           label="Дата оформления"
-          value="5000"
+          defaultValue="5000"
           placeholder="₽"
         />
         <Input className={styles.priceFinish} placeholder="₽" />
