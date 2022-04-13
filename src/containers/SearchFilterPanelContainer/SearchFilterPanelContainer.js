@@ -1,23 +1,57 @@
+import {useEffect} from "react";
 import { SearchFilterPanel } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
-import { searchLaptops } from "../../actionCreators/laptops";
-import { getLaptops } from "../../selectors/laptops";
+import {getSearchLine} from "../../selectors/searchLine";
+import {createClearSearchLaptopsLine, createSetSearhLaptopsLine, createSearch} from "../../actionCreators/searchLine";
+import {getLaptops} from "../../actionCreators/laptops";
+
+const ENTER = 13;
+
+// let timer = null;
 
 export const SearchFilterPanelContainer = () => {
-  const laptops = useSelector(getLaptops);
+  const searchLine = useSelector(getSearchLine);
   const dispatch = useDispatch();
 
+
   const handleChangeSearch = ({ target: { value } }) => {
-    dispatch(searchLaptops(value));
-    console.log("value", value);
+    dispatch(createSetSearhLaptopsLine(value));
+
+    // TODO: дописать запрос на сервер
+    // clearTimeout(timer);
+    // timer = setTimeout(() => {
+    //   dispatch({
+    //     type: 'Отфильтруй',
+    //     payload: value
+    //   });
+    // }, 500);
   };
 
-  console.log(laptops);
+  const handleClear = () => {
+    dispatch(createClearSearchLaptopsLine());
+  };
+
+  const handleKeyDown = ({ keyCode }) => {
+    if (keyCode === ENTER) {
+      dispatch(createSearch(searchLine));
+    }
+  };
+
+  const handleLoad = () => {
+    dispatch(getLaptops());
+  };
+
+
+  useEffect(() => {
+    handleLoad();
+  }, []);
 
   return (
     <SearchFilterPanel
-      laptops={laptops}
-      handleChangeSearch={handleChangeSearch}
+      onChange={handleChangeSearch}
+      onClear={handleClear}
+      onKeyDown={handleKeyDown}
+      value={searchLine}
     />
   );
 };

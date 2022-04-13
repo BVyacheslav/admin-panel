@@ -1,7 +1,12 @@
-// import { createSelector } from 'reselect'
+import { createSelector } from 'reselect';
+import { getSearchLine } from './searchLine'
 
 export const getLaptops = ({ laptops }) => laptops;
-// export const getLaptops = createSelector(
-//   laptopsSelector,
-//   laptops => laptops.filter(item => item.id === 1)
-// );
+
+export const getFilteredLaptops = createSelector(
+    getLaptops,
+    getSearchLine,
+    (laptops, search) => laptops.filter(
+        ({ id, brand }) => id.includes(search) || brand.includes(search)
+    )
+);

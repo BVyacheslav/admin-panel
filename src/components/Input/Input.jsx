@@ -12,6 +12,7 @@ export const Input = ({
   value,
   defaultValue,
   disabled,
+  onClear,
   error,
   search,
   ...props
@@ -32,7 +33,7 @@ export const Input = ({
         {...props}
       />
       {(value || defaultValue) && !disabled && (
-        <button className={styles.deleteIcon}>
+        <button onClick={onClear} className={styles.deleteIcon}>
           <DeleteIcon />
         </button>
       )}
