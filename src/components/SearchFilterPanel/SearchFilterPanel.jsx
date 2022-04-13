@@ -6,15 +6,18 @@ import { ReactComponent as RefreshIcon } from "../../icons/refresh.svg";
 
 import styles from "./SearchFilterPanel.module.css";
 
-export const SearchFilterPanel = ({ className, handleChangeSearch }) => {
+export const SearchFilterPanel = ({ value, className, onChange, onClear, ...props }) => {
   return (
     <div className={cx(styles.searchFilterPanel, className)}>
       <div className={styles.searchFilter}>
         <Input
+          {...props}
           className={styles.search}
           search
+          value={value}
           placeholder="Номер или бренд"
-          onChange={handleChangeSearch}
+          onClear={onClear}
+          onChange={onChange}
         />
         <Button variant="white" size="medium" icon={FilterIcon}>
           Фильтры
