@@ -9,11 +9,12 @@ import styles from "./Input.module.css";
 export const Input = ({
   children,
   className,
-  value,
   defaultValue,
   disabled,
   error,
+  onClear,
   search,
+  value,
   ...props
 }) => {
   const inputClass = cx(styles.input, {
@@ -32,7 +33,7 @@ export const Input = ({
         {...props}
       />
       {(value || defaultValue) && !disabled && (
-        <button className={styles.deleteIcon}>
+        <button onClick={onClear} className={styles.deleteIcon}>
           <DeleteIcon />
         </button>
       )}

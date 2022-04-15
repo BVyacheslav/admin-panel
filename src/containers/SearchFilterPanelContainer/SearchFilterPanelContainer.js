@@ -1,23 +1,28 @@
 import { SearchFilterPanel } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
-import { searchLaptops } from "../../actionCreators/laptops";
-import { getLaptops } from "../../selectors/laptops";
+import {
+  createSetSearchLaptopsLine,
+  createClearSearchLaptopsLine,
+} from "../../actionCreators/searchLine";
+import { getSearchLine } from "../../selectors/searchLine";
 
 export const SearchFilterPanelContainer = () => {
-  const laptops = useSelector(getLaptops);
+  const searchLine = useSelector(getSearchLine);
   const dispatch = useDispatch();
 
   const handleChangeSearch = ({ target: { value } }) => {
-    dispatch(searchLaptops(value));
-    console.log("value", value);
+    dispatch(createSetSearchLaptopsLine(value));
   };
 
-  console.log(laptops);
+  const handleClear = () => {
+    dispatch(createClearSearchLaptopsLine());
+  };
 
   return (
     <SearchFilterPanel
-      laptops={laptops}
-      handleChangeSearch={handleChangeSearch}
+      onChange={handleChangeSearch}
+      onClear={handleClear}
+      value={searchLine}
     />
   );
 };

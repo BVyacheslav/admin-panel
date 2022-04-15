@@ -1,5 +1,3 @@
-import { SEARCH_LAPTOPS } from "../constants/actionTypes";
-
 const initialState = [
   {
     id: "111",
@@ -29,13 +27,6 @@ const initialState = [
 
 const laptops = (state = initialState, { type, payload }) => {
   switch (type) {
-    case SEARCH_LAPTOPS:
-      if (payload) {
-        return state.filter((item) => item.id.includes(payload));
-      } else {
-        return state;
-      }
-
     default:
       return state;
   }
