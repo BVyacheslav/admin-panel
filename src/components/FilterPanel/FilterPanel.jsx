@@ -5,7 +5,12 @@ import { InputWithLabel } from "../";
 
 import styles from "./FilterPanel.module.css";
 
-export const FilterPanel = ({ className, showFilterPanel }) => {
+export const FilterPanel = ({
+  className,
+  showFilterPanel,
+  filters,
+  onChange,
+}) => {
   const filterPanelClass = cx(styles.filterPanel, {
     [styles.showFilterPanel]: showFilterPanel,
     className,
@@ -17,8 +22,9 @@ export const FilterPanel = ({ className, showFilterPanel }) => {
         <InputWithLabel
           className={styles.dateStart}
           label="Дата оформления"
-          defaultValue="20.01.2021"
-          placeholder="Введите"
+          value={filters.dateOrderingStart}
+          onChange={onChange}
+          placeholder="dd.mm.dddd"
         />
         <Input className={styles.dateFinish} placeholder="dd.mm.dddd" />
 
