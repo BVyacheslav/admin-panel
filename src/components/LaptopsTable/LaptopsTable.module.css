@@ -6,3 +6,11 @@
 
 .tableFooter {
 }
+
+.inStock {
+  color: #459df5;
+}
+
+.outOfStock {
+  color: goldenrod;
+}
