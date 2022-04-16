@@ -1,4 +1,4 @@
-import { SET_SHOW_FILTERS } from "../../constants/actionTypes";
+import { SET_SHOW_FILTERS } from "../constants/actionTypes";
 
 const initialState = false;
 

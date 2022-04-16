@@ -9,7 +9,16 @@ export const FilterPanel = ({
   className,
   showFilterPanel,
   filters,
-  onChange,
+  onChangeDateOrderingStart,
+  onClearDateOrderingStart,
+  onChangeDateOrderingFinish,
+  onClearDateOrderingFinish,
+  onChangeOrderStatus,
+  onClearOrderStatus,
+  onChangeOrderPriceStart,
+  onClearOrderPriceStart,
+  onChangeOrderPriceFinish,
+  onClearOrderPriceFinish,
 }) => {
   const filterPanelClass = cx(styles.filterPanel, {
     [styles.showFilterPanel]: showFilterPanel,
@@ -22,26 +31,43 @@ export const FilterPanel = ({
         <InputWithLabel
           className={styles.dateStart}
           label="Дата оформления"
-          value={filters.dateOrderingStart}
-          onChange={onChange}
           placeholder="dd.mm.dddd"
+          value={filters.dateOrderingStart}
+          onChange={onChangeDateOrderingStart}
+          onClear={onClearDateOrderingStart}
         />
-        <Input className={styles.dateFinish} placeholder="dd.mm.dddd" />
+        <Input
+          className={styles.dateFinish}
+          placeholder="dd.mm.dddd"
+          value={filters.dateOrderingFinish}
+          onChange={onChangeDateOrderingFinish}
+          onClear={onClearDateOrderingFinish}
+        />
 
         <InputWithLabel
           className={styles.status}
           label="Статус заказа"
-          defaultValue="Подтвержден"
           placeholder="Нажмите для выбора"
+          value={filters.orderStatus}
+          onChange={onChangeOrderStatus}
+          onClear={onClearOrderStatus}
         />
 
         <InputWithLabel
           className={styles.priceStart}
           label="Сумма заказа"
-          defaultValue="5000"
           placeholder="₽"
+          value={filters.orderPriceStart}
+          onChange={onChangeOrderPriceStart}
+          onClear={onClearOrderPriceStart}
         />
-        <Input className={styles.priceFinish} placeholder="₽" />
+        <Input
+          className={styles.priceFinish}
+          placeholder="₽"
+          value={filters.orderPriceFinish}
+          onChange={onChangeOrderPriceFinish}
+          onClear={onClearOrderPriceFinish}
+        />
       </div>
       <Button variant="blue" size="medium">
         Применить

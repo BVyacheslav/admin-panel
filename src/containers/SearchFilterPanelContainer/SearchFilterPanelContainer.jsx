@@ -7,6 +7,7 @@ import {
 import { getSearchLine } from "../../redux/selectors/searchLineSelector";
 
 import { createSetShowFilters } from "../../redux/actionCreators/showFiltersCreator";
+import { createClearAllFilters } from "../../redux/actionCreators/filtersCreator";
 
 export const SearchFilterPanelContainer = () => {
   const searchLine = useSelector(getSearchLine);
@@ -22,6 +23,7 @@ export const SearchFilterPanelContainer = () => {
 
   const handleClearFilters = () => {
     dispatch(createClearSearchLaptopsLine());
+    dispatch(createClearAllFilters());
   };
 
   const handleShowFilters = () => {

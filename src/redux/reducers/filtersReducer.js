@@ -9,7 +9,8 @@ import {
   CLEAR_FILTER_ORDER_PRICE_START,
   SET_FILTER_ORDER_PRICE_FINISH,
   CLEAR_FILTER_ORDER_PRICE_FINISH,
-} from "../../constants/actionTypes";
+  CLEAR_ALL_FILTERS,
+} from "../constants/actionTypes";
 
 const initialState = {
   dateOrderingStart: "",
@@ -27,24 +28,27 @@ const filtersReducer = (state = initialState, { type, payload }) => {
       return { ...state, dateOrderingStart: "" };
 
     case SET_FILTER_DATE_ORDERING_FINISH:
-      return { ...state, dateOrderingStart: payload };
+      return { ...state, dateOrderingFinish: payload };
     case CLEAR_FILTER_DATE_ORDERING_FINISH:
-      return { ...state, dateOrderingStart: "" };
+      return { ...state, dateOrderingFinish: "" };
 
     case SET_FILTER_ORDER_STATUS:
-      return { ...state, dateOrderStatus: payload };
+      return { ...state, orderStatus: payload };
     case CLEAR_FILTER_ORDER_STATUS:
-      return { ...state, dateOrderingStart: "" };
+      return { ...state, orderStatus: "" };
 
     case SET_FILTER_ORDER_PRICE_START:
-      return { ...state, dateOrderingStart: payload };
+      return { ...state, orderPriceStart: payload };
     case CLEAR_FILTER_ORDER_PRICE_START:
-      return { ...state, dateOrderingStart: "" };
+      return { ...state, orderPriceStart: "" };
 
     case SET_FILTER_ORDER_PRICE_FINISH:
-      return { ...state, dateOrderingStart: payload };
+      return { ...state, orderPriceFinish: payload };
     case CLEAR_FILTER_ORDER_PRICE_FINISH:
-      return { ...state, dateOrderingStart: "" };
+      return { ...state, orderPriceFinish: "" };
+
+    case CLEAR_ALL_FILTERS:
+      return initialState;
 
     default:
       return state;
