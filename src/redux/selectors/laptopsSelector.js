@@ -19,12 +19,56 @@ export const getFilteredLaptops = createSelector(
   getLaptops,
   getSearchLine,
   getFilters,
-  (laptops, search, filters) =>
-    laptops.filter(
-      ({ id, brand, price }) =>
-        price > Number(filters.orderPriceStart) &&
-        price < Number(filters.orderPriceFinish) &&
-        (id.includes(search) ||
-          brand.toLowerCase().includes(search.toLowerCase()))
-    )
+  (
+    laptops,
+    search,
+    {
+      dateOrderingStart,
+      dateOrderingFinish,
+      orderStatus,
+      orderPriceStart,
+      orderPriceFinish,
+    }
+  ) =>
+    laptops.filter(({ id, date, brand, price, status }) => {
+      let validation =
+        id.includes(search) ||
+        brand.toLowerCase().includes(search.toLowerCase());
+      if (dateOrderingStart && dateOrderingFinish) {
+        validation =
+          validation &&
+          Date.parse(
+            `${date.slice(6, 10)}-${date.slice(3, 5)}-${date.slice(0, 2)}`
+          ) >=
+            Date.parse(
+              `${dateOrderingStart.slice(6, 10)}-${dateOrderingStart.slice(
+                3,
+                5
+              )}-${dateOrderingStart.slice(0, 2)}`
+            ) &&
+          Date.parse(
+            `${date.slice(6, 10)}-${date.slice(3, 5)}-${date.slice(0, 2)}`
+          ) <=
+            Date.parse(
+              `${dateOrderingFinish.slice(6, 10)}-${dateOrderingFinish.slice(
+                3,
+                5
+              )}-${dateOrderingFinish.slice(0, 2)}`
+            );
+      }
+
+      if (orderStatus) {
+        validation = validation && status.includes(orderStatus);
+      }
+
+      if (orderPriceStart && orderPriceFinish) {
+        validation =
+          validation &&
+          price > Number(orderPriceStart) &&
+          price < Number(orderPriceFinish) &&
+          (id.includes(search) ||
+            brand.toLowerCase().includes(search.toLowerCase()));
+      }
+      return validation;
+    })
 );

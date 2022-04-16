@@ -9,7 +9,7 @@ const initialState = [
   },
   {
     id: "112",
-    date: "20.01.2021",
+    date: "25.01.2021",
     brand: "ASUS",
     model: "VivoBook Pro 15",
     price: "89999",
@@ -17,7 +17,7 @@ const initialState = [
   },
   {
     id: "113",
-    date: "20.01.2021",
+    date: "14.02.2021",
     brand: "HP",
     model: "15s-eq1129ur",
     price: "27730",

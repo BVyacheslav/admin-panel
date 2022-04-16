@@ -32,14 +32,14 @@ export const FilterPanel = ({
         <InputWithLabel
           className={styles.dateStart}
           label="Дата оформления"
-          placeholder="dd.mm.dddd"
+          placeholder="dd.mm.yyyy"
           value={filters.dateOrderingStart}
           onChange={onChangeDateOrderingStart}
           onClear={onClearDateOrderingStart}
         />
         <Input
           className={styles.dateFinish}
-          placeholder="dd.mm.dddd"
+          placeholder="dd.mm.yyyy"
           value={filters.dateOrderingFinish}
           onChange={onChangeDateOrderingFinish}
           onClear={onClearDateOrderingFinish}
