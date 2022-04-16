@@ -1,11 +1,11 @@
 import {
   CLEAR_SEARCH_LAPTOPS_LINE,
   SET_SEARCH_LAPTOPS_LINE,
-} from "../constants/actionTypes";
+} from "../../constants/actionTypes";
 
 const initialState = "";
 
-const searchLine = (state = initialState, { type, payload }) => {
+const searchLineReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_SEARCH_LAPTOPS_LINE:
       return payload;
@@ -15,4 +15,4 @@ const searchLine = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export default searchLine;
+export default searchLineReducer;

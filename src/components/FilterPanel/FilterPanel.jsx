@@ -31,7 +31,7 @@ export const FilterPanel = ({ className, showFilterPanel }) => {
 
         <InputWithLabel
           className={styles.priceStart}
-          label="Дата оформления"
+          label="Сумма заказа"
           defaultValue="5000"
           placeholder="₽"
         />

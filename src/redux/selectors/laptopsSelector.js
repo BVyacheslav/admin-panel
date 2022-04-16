@@ -1,7 +1,7 @@
 import { createSelector } from "reselect";
-import { getSearchLine } from "./searchLine";
+import { getSearchLine } from "./searchLineSelector";
 
-export const getLaptops = ({ laptops }) => laptops;
+export const getLaptops = ({ laptopsReducer }) => laptopsReducer;
 
 export const getFilteredLaptops = createSelector(
   getLaptops,

@@ -25,10 +25,10 @@ const initialState = [
   },
 ];
 
-const laptops = (state = initialState, { type, payload }) => {
+const laptopsReducer = (state = initialState, { type }) => {
   switch (type) {
     default:
       return state;
   }
 };
-export default laptops;
+export default laptopsReducer;

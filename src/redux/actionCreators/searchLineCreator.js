@@ -1,7 +1,7 @@
 import {
   CLEAR_SEARCH_LAPTOPS_LINE,
   SET_SEARCH_LAPTOPS_LINE,
-} from "../constants/actionTypes";
+} from "../../constants/actionTypes";
 
 export const createSetSearchLaptopsLine = (payload) => ({
   type: SET_SEARCH_LAPTOPS_LINE,
