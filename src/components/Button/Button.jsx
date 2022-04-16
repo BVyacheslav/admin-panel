@@ -9,6 +9,7 @@ export const Button = ({
   icon: Icon,
   size,
   fullWidth,
+  ...props
 }) => {
   const buttonClass = cx(styles.button, className, {
     [styles[`${variant}`]]: true,
@@ -18,7 +19,7 @@ export const Button = ({
   });
 
   return (
-    <button className={buttonClass}>
+    <button className={buttonClass} {...props}>
       {Icon && <Icon className={styles.icon} />}
       {children && <span className={styles.text}>{children}</span>}
     </button>

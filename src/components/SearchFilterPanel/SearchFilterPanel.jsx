@@ -6,7 +6,14 @@ import { ReactComponent as RefreshIcon } from "../../icons/refresh.svg";
 
 import styles from "./SearchFilterPanel.module.css";
 
-export const SearchFilterPanel = ({ className, value, onChange, onClear }) => {
+export const SearchFilterPanel = ({
+  className,
+  value,
+  onChange,
+  onClear,
+  onClearFilters,
+  onShowFilters,
+}) => {
   return (
     <div className={cx(styles.searchFilterPanel, className)}>
       <div className={styles.searchFilter}>
@@ -18,10 +25,15 @@ export const SearchFilterPanel = ({ className, value, onChange, onClear }) => {
           onClear={onClear}
           onChange={onChange}
         />
-        <Button variant="white" size="medium" icon={FilterIcon}>
+        <Button
+          variant="white"
+          size="medium"
+          icon={FilterIcon}
+          onClick={onShowFilters}
+        >
           Фильтры
         </Button>
-        <Button variant="blue" size="medium">
+        <Button variant="blue" size="medium" onClick={onClearFilters}>
           Сбросить фильтры
         </Button>
       </div>

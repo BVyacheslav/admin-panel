@@ -1,8 +1,8 @@
 import { LaptopsTableContainer } from "../../../containers";
 import { SearchFilterPanelContainer } from "../../../containers";
+import { FilterPanelContainer } from "../../../containers";
 
 import { Header } from "../..";
-import { FilterPanel } from "../..";
 
 import cx from "classnames";
 
@@ -13,7 +13,7 @@ export const LaptopsPage = ({ className }) => {
     <div className={cx(styles.laptopsPage, className)}>
       <Header>Список заказов</Header>
       <SearchFilterPanelContainer />
-      <FilterPanel />
+      <FilterPanelContainer />
       <LaptopsTableContainer />
     </div>
   );

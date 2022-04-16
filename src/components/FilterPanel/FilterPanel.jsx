@@ -5,9 +5,14 @@ import { InputWithLabel } from "../";
 
 import styles from "./FilterPanel.module.css";
 
-export const FilterPanel = ({ className }) => {
+export const FilterPanel = ({ className, showFilterPanel }) => {
+  const filterPanelClass = cx(styles.filterPanel, {
+    [styles.showFilterPanel]: showFilterPanel,
+    className,
+  });
+
   return (
-    <div className={cx(styles.filterPanel, className)}>
+    <div className={filterPanelClass}>
       <div className={styles.filters}>
         <InputWithLabel
           className={styles.dateStart}
