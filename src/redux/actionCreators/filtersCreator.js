@@ -9,6 +9,7 @@ import {
   CLEAR_FILTER_ORDER_PRICE_START,
   SET_FILTER_ORDER_PRICE_FINISH,
   CLEAR_FILTER_ORDER_PRICE_FINISH,
+  SET_FILTER_ACTIVE,
   CLEAR_ALL_FILTERS,
 } from "../constants/actionTypes";
 
@@ -50,6 +51,10 @@ export const createSetOrderPriceFinish = (payload) => ({
 });
 export const createClearOrderPriceFinish = () => ({
   type: CLEAR_FILTER_ORDER_PRICE_FINISH,
+});
+
+export const createSetFilterActive = () => ({
+  type: SET_FILTER_ACTIVE,
 });
 
 export const createClearAllFilters = () => ({

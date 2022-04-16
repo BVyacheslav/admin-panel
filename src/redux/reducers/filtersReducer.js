@@ -9,6 +9,7 @@ import {
   CLEAR_FILTER_ORDER_PRICE_START,
   SET_FILTER_ORDER_PRICE_FINISH,
   CLEAR_FILTER_ORDER_PRICE_FINISH,
+  SET_FILTER_ACTIVE,
   CLEAR_ALL_FILTERS,
 } from "../constants/actionTypes";
 
@@ -18,6 +19,7 @@ const initialState = {
   orderStatus: "",
   orderPriceStart: "",
   orderPriceFinish: "",
+  active: false,
 };
 
 const filtersReducer = (state = initialState, { type, payload }) => {
@@ -46,6 +48,9 @@ const filtersReducer = (state = initialState, { type, payload }) => {
       return { ...state, orderPriceFinish: payload };
     case CLEAR_FILTER_ORDER_PRICE_FINISH:
       return { ...state, orderPriceFinish: "" };
+
+    case SET_FILTER_ACTIVE:
+      return { ...state, active: true };
 
     case CLEAR_ALL_FILTERS:
       return initialState;

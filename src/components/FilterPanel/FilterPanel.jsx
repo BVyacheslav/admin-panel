@@ -19,6 +19,7 @@ export const FilterPanel = ({
   onClearOrderPriceStart,
   onChangeOrderPriceFinish,
   onClearOrderPriceFinish,
+  onChangeFilterActive,
 }) => {
   const filterPanelClass = cx(styles.filterPanel, {
     [styles.showFilterPanel]: showFilterPanel,
@@ -69,7 +70,7 @@ export const FilterPanel = ({
           onClear={onClearOrderPriceFinish}
         />
       </div>
-      <Button variant="blue" size="medium">
+      <Button variant="blue" size="medium" onClick={onChangeFilterActive}>
         Применить
       </Button>
     </div>
