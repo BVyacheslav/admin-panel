@@ -28,7 +28,7 @@ export const getFilteredLaptops = createSelector(
       orderPriceFinish,
     }
   ) =>
-    laptops.filter(({ id, date, brand, price, status }) => {
+    laptops.filter(({ date, price, status }) => {
       let validation = true;
       if (dateOrderingStart && dateOrderingFinish) {
         validation =
