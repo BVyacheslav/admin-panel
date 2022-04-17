@@ -1,18 +1,30 @@
 import { createSelector } from "reselect";
 import { getSearchLine } from "./searchLineSelector";
 import { getFilters } from "./filtersSelector";
+import { getSorting } from "./sortingSelector";
 
 export const getLaptops = ({ laptopsReducer }) => laptopsReducer;
 
 export const getSearchLaptops = createSelector(
   getLaptops,
   getSearchLine,
-  (laptops, search) =>
-    laptops.filter(
-      ({ id, brand }) =>
-        id.includes(search) ||
-        brand.toLowerCase().includes(search.toLowerCase())
-    )
+  getSorting,
+  (laptops, search, { key, desc }) =>
+    laptops
+      .filter(
+        ({ id, brand }) =>
+          String(id).includes(search) ||
+          brand.toLowerCase().includes(search.toLowerCase())
+      )
+      .sort((a, b) => {
+        if (a[key] > b[key]) {
+          return 1;
+        }
+        if (a[key] < b[key]) {
+          return -1;
+        }
+        return 0;
+      })
 );
 
 export const getFilteredLaptops = createSelector(
