@@ -16,12 +16,10 @@ export const getSearchLaptops = createSelector(
 );
 
 export const getFilteredLaptops = createSelector(
-  getLaptops,
-  getSearchLine,
+  getSearchLaptops,
   getFilters,
   (
     laptops,
-    search,
     {
       dateOrderingStart,
       dateOrderingFinish,
@@ -31,9 +29,7 @@ export const getFilteredLaptops = createSelector(
     }
   ) =>
     laptops.filter(({ id, date, brand, price, status }) => {
-      let validation =
-        id.includes(search) ||
-        brand.toLowerCase().includes(search.toLowerCase());
+      let validation = true;
       if (dateOrderingStart && dateOrderingFinish) {
         validation =
           validation &&
@@ -65,9 +61,7 @@ export const getFilteredLaptops = createSelector(
         validation =
           validation &&
           price > Number(orderPriceStart) &&
-          price < Number(orderPriceFinish) &&
-          (id.includes(search) ||
-            brand.toLowerCase().includes(search.toLowerCase()));
+          price < Number(orderPriceFinish);
       }
       return validation;
     })
