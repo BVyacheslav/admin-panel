@@ -17,13 +17,23 @@ export const getSearchLaptops = createSelector(
           brand.toLowerCase().includes(search.toLowerCase())
       )
       .sort((a, b) => {
-        if (a[key] > b[key]) {
-          return 1;
+        if (desc) {
+          if (a[key] < b[key]) {
+            return 1;
+          }
+          if (a[key] > b[key]) {
+            return -1;
+          }
+          return 0;
+        } else {
+          if (a[key] > b[key]) {
+            return 1;
+          }
+          if (a[key] < b[key]) {
+            return -1;
+          }
+          return 0;
         }
-        if (a[key] < b[key]) {
-          return -1;
-        }
-        return 0;
       })
 );
 

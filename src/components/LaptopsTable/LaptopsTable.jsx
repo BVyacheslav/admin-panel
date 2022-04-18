@@ -9,7 +9,13 @@ import cx from "classnames";
 
 import styles from "./LaptopsTable.module.css";
 
-export const LaptopsTable = ({ className, laptops }) => {
+export const LaptopsTable = ({
+  className,
+  laptops,
+  sortingKey,
+  sortingOrder,
+  onSorting,
+}) => {
   return (
     <div className={cx(styles.laptopsTable, className)}>
       <TableHead>
@@ -17,12 +23,48 @@ export const LaptopsTable = ({ className, laptops }) => {
           <TableCell>
             <Checkbox />
           </TableCell>
-          <TableCell>ID</TableCell>
-          <TableCell>Дата</TableCell>
-          <TableCell>Бренд</TableCell>
-          <TableCell>Модель</TableCell>
-          <TableCell>Цена</TableCell>
-          <TableCell>Статус</TableCell>
+          <TableCell
+            onClick={() => onSorting("id")}
+            sorting={sortingKey === "id"}
+            sortingOrder={sortingOrder}
+          >
+            ID
+          </TableCell>
+          <TableCell
+            onClick={() => onSorting("date")}
+            sorting={sortingKey === "date"}
+            sortingOrder={sortingOrder}
+          >
+            Дата
+          </TableCell>
+          <TableCell
+            onClick={() => onSorting("brand")}
+            sorting={sortingKey === "brand"}
+            sortingOrder={sortingOrder}
+          >
+            Бренд
+          </TableCell>
+          <TableCell
+            onClick={() => onSorting("model")}
+            sorting={sortingKey === "model"}
+            sortingOrder={sortingOrder}
+          >
+            Модель
+          </TableCell>
+          <TableCell
+            onClick={() => onSorting("price")}
+            sorting={sortingKey === "price"}
+            sortingOrder={sortingOrder}
+          >
+            Цена
+          </TableCell>
+          <TableCell
+            onClick={() => onSorting("status")}
+            sorting={sortingKey === "status"}
+            sortingOrder={sortingOrder}
+          >
+            Статус
+          </TableCell>
         </TableRow>
       </TableHead>
       <TableBody className={styles.tableBody}>

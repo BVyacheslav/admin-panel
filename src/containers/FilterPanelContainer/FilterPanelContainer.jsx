@@ -30,7 +30,6 @@ export const FilterPanelContainer = () => {
   };
 
   const handleChangeDateOrderingFinish = ({ target: { value } }) => {
-    console.log("handleChangeDateOrderingFinish");
     dispatch(createSetDateOrderingFinish(value));
   };
   const handleClearDateOrderingFinish = () => {
