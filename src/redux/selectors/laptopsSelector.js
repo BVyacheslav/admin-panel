@@ -17,6 +17,77 @@ export const getSearchLaptops = createSelector(
           brand.toLowerCase().includes(search.toLowerCase())
       )
       .sort((a, b) => {
+        if (key === "date") {
+          if (desc) {
+            if (
+              Date.parse(
+                `${a[key].slice(6, 10)}-${a[key].slice(3, 5)}-${a[key].slice(
+                  0,
+                  2
+                )}`
+              ) <
+              Date.parse(
+                `${b[key].slice(6, 10)}-${b[key].slice(3, 5)}-${b[key].slice(
+                  0,
+                  2
+                )}`
+              )
+            ) {
+              return 1;
+            }
+            if (
+              Date.parse(
+                `${a[key].slice(6, 10)}-${a[key].slice(3, 5)}-${a[key].slice(
+                  0,
+                  2
+                )}`
+              ) >
+              Date.parse(
+                `${b[key].slice(6, 10)}-${b[key].slice(3, 5)}-${b[key].slice(
+                  0,
+                  2
+                )}`
+              )
+            ) {
+              return -1;
+            }
+            return 0;
+          } else {
+            if (
+              Date.parse(
+                `${a[key].slice(6, 10)}-${a[key].slice(3, 5)}-${a[key].slice(
+                  0,
+                  2
+                )}`
+              ) >
+              Date.parse(
+                `${b[key].slice(6, 10)}-${b[key].slice(3, 5)}-${b[key].slice(
+                  0,
+                  2
+                )}`
+              )
+            ) {
+              return 1;
+            }
+            if (
+              Date.parse(
+                `${a[key].slice(6, 10)}-${a[key].slice(3, 5)}-${a[key].slice(
+                  0,
+                  2
+                )}`
+              ) <
+              Date.parse(
+                `${b[key].slice(6, 10)}-${b[key].slice(3, 5)}-${b[key].slice(
+                  0,
+                  2
+                )}`
+              )
+            ) {
+              return -1;
+            }
+            return 0;
+          }
+        }
         if (desc) {
           if (a[key] < b[key]) {
             return 1;
