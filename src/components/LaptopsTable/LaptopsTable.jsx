@@ -4,7 +4,7 @@ import { TableHead } from "../Table";
 import { TableBody } from "../Table";
 import { TableFooter } from "../Table";
 import { Checkbox } from "..";
-import { LaptopsTableHeader } from "./LaptopsTableHeader";
+import { LaptopsTableHeader } from "./LaptopsTableHeader/LaptopsTableHeader";
 
 import cx from "classnames";
 
@@ -16,13 +16,17 @@ export const LaptopsTable = ({
   sortingKey,
   sortingOrder,
   onSorting,
+  count = 0,
 }) => {
   return (
     <div className={cx(styles.laptopsTable, className)}>
       <TableHead>
         <TableRow>
           <TableCell>
-            <Checkbox />
+            <Checkbox
+            // onChange={onAllCheckboxClick}
+            // checked={isAllSelectedIds}
+            />
           </TableCell>
           <LaptopsTableHeader
             sortingKey={sortingKey}
@@ -56,7 +60,7 @@ export const LaptopsTable = ({
         ))}
       </TableBody>
       <TableFooter className={styles.tableFooter}>
-        Выбрано записей: 0
+        Выбрано записей: {count}
       </TableFooter>
     </div>
   );
