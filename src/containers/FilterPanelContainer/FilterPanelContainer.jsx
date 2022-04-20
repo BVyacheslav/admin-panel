@@ -2,20 +2,7 @@ import { FilterPanel } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
 import { getShowFilters } from "../../store/selectors/showFiltersSelector";
 import { getFilters } from "../../store/selectors/filtersSelector";
-
-import {
-  createSetDateOrderingStart,
-  createClearDateOrderingStart,
-  createSetDateOrderingFinish,
-  createClearDateOrderingFinish,
-  createSetOrderStatus,
-  createClearOrderStatus,
-  createSetOrderPriceStart,
-  createClearOrderPriceStart,
-  createSetOrderPriceFinish,
-  createClearOrderPriceFinish,
-} from "../../store/actionCreators/filtersCreator";
-
+import { createSetFilter } from "../../store/actionCreators/filtersCreator";
 import { createSetActiveFilter } from "../../store/actionCreators/activeFilterCreator";
 
 export const FilterPanelContainer = () => {
@@ -23,40 +10,15 @@ export const FilterPanelContainer = () => {
   const filters = useSelector(getFilters);
   const dispatch = useDispatch();
 
-  const handleChangeDateOrderingStart = ({ target: { value } }) => {
-    dispatch(createSetDateOrderingStart(value));
-  };
-  const handleClearDateOrderingStart = () => {
-    dispatch(createClearDateOrderingStart());
-  };
-
-  const handleChangeDateOrderingFinish = ({ target: { value } }) => {
-    dispatch(createSetDateOrderingFinish(value));
-  };
-  const handleClearDateOrderingFinish = () => {
-    dispatch(createClearDateOrderingFinish());
-  };
-
-  const handleChangeOrderStatus = ({ target: { value } }) => {
-    dispatch(createSetOrderStatus(value));
-  };
-  const handleClearOrderStatus = () => {
-    dispatch(createClearOrderStatus());
-  };
-
-  const handleChangeOrderPriceStart = ({ target: { value } }) => {
-    dispatch(createSetOrderPriceStart(value));
-  };
-  const handleClearOrderPriceStart = () => {
-    dispatch(createClearOrderPriceStart());
-  };
-
-  const handleChangeOrderPriceFinish = ({ target: { value } }) => {
-    dispatch(createSetOrderPriceFinish(value));
-  };
-  const handleClearOrderPriceFinish = () => {
-    dispatch(createClearOrderPriceFinish());
-  };
+  const createHandleChange =
+    (key, isClear = false) =>
+    ({ target: { value } }) => {
+      dispatch(
+        createSetFilter({
+          [key]: isClear ? "" : value,
+        })
+      );
+    };
 
   const handleChangeFilterActive = () => {
     dispatch(createSetActiveFilter(filters));
@@ -67,16 +29,16 @@ export const FilterPanelContainer = () => {
       filters={filters}
       showFilterPanel={showFilters}
       onChangeFilterActive={handleChangeFilterActive}
-      onChangeDateOrderingStart={handleChangeDateOrderingStart}
-      onClearDateOrderingStart={handleClearDateOrderingStart}
-      onChangeDateOrderingFinish={handleChangeDateOrderingFinish}
-      onClearDateOrderingFinish={handleClearDateOrderingFinish}
-      onChangeOrderStatus={handleChangeOrderStatus}
-      onClearOrderStatus={handleClearOrderStatus}
-      onChangeOrderPriceStart={handleChangeOrderPriceStart}
-      onClearOrderPriceStart={handleClearOrderPriceStart}
-      onChangeOrderPriceFinish={handleChangeOrderPriceFinish}
-      onClearOrderPriceFinish={handleClearOrderPriceFinish}
+      onChangeDateOrderingStart={createHandleChange("dateOrderingStart")}
+      onClearDateOrderingStart={createHandleChange("dateOrderingStart", true)}
+      onChangeDateOrderingFinish={createHandleChange("dateOrderingFinish")}
+      onClearDateOrderingFinish={createHandleChange("dateOrderingFinish", true)}
+      onChangeOrderStatus={createHandleChange("orderStatus")}
+      onClearOrderStatus={createHandleChange("orderStatus", true)}
+      onChangeOrderPriceStart={createHandleChange("orderPriceStart")}
+      onClearOrderPriceStart={createHandleChange("orderPriceStart", true)}
+      onChangeOrderPriceFinish={createHandleChange("orderPriceFinish")}
+      onClearOrderPriceFinish={createHandleChange("orderPriceFinish", true)}
     />
   );
 };
