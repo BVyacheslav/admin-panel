@@ -3,14 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   getFilteredLaptops,
   getSearchLaptops,
-} from "../../redux/selectors/laptopsSelector";
-import { getFilters } from "../../redux/selectors/filtersSelector";
-import { getSorting } from "../../redux/selectors/sortingSelector";
+} from "../../store/selectors/laptopsSelector";
+import { getFilters } from "../../store/selectors/filtersSelector";
+import { getSorting } from "../../store/selectors/sortingSelector";
 
 import {
   createSetKeySorting,
   createSetOrderSorting,
-} from "../../redux/actionCreators/sortingCreator";
+} from "../../store/actionCreators/sortingCreator";
 
 export const LaptopsTableContainer = () => {
   const filteredLaptops = useSelector(getFilteredLaptops);

@@ -1,7 +1,7 @@
 import { FilterPanel } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
-import { getShowFilters } from "../../redux/selectors/showFiltersSelector";
-import { getFilters } from "../../redux/selectors/filtersSelector";
+import { getShowFilters } from "../../store/selectors/showFiltersSelector";
+import { getFilters } from "../../store/selectors/filtersSelector";
 
 import {
   createSetDateOrderingStart,
@@ -15,7 +15,7 @@ import {
   createSetOrderPriceFinish,
   createClearOrderPriceFinish,
   createSetFilterActive,
-} from "../../redux/actionCreators/filtersCreator";
+} from "../../store/actionCreators/filtersCreator";
 
 export const FilterPanelContainer = () => {
   const showFilters = useSelector(getShowFilters);
