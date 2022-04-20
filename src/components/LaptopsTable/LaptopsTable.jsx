@@ -4,6 +4,7 @@ import { TableHead } from "../Table";
 import { TableBody } from "../Table";
 import { TableFooter } from "../Table";
 import { Checkbox } from "..";
+import { LaptopsTableHeader } from "./LaptopsTableHeader";
 
 import cx from "classnames";
 
@@ -23,48 +24,11 @@ export const LaptopsTable = ({
           <TableCell>
             <Checkbox />
           </TableCell>
-          <TableCell
-            onClick={() => onSorting("id")}
-            sorting={sortingKey === "id"}
+          <LaptopsTableHeader
+            sortingKey={sortingKey}
             sortingOrder={sortingOrder}
-          >
-            ID
-          </TableCell>
-          <TableCell
-            onClick={() => onSorting("date")}
-            sorting={sortingKey === "date"}
-            sortingOrder={sortingOrder}
-          >
-            Дата
-          </TableCell>
-          <TableCell
-            onClick={() => onSorting("brand")}
-            sorting={sortingKey === "brand"}
-            sortingOrder={sortingOrder}
-          >
-            Бренд
-          </TableCell>
-          <TableCell
-            onClick={() => onSorting("model")}
-            sorting={sortingKey === "model"}
-            sortingOrder={sortingOrder}
-          >
-            Модель
-          </TableCell>
-          <TableCell
-            onClick={() => onSorting("price")}
-            sorting={sortingKey === "price"}
-            sortingOrder={sortingOrder}
-          >
-            Цена
-          </TableCell>
-          <TableCell
-            onClick={() => onSorting("status")}
-            sorting={sortingKey === "status"}
-            sortingOrder={sortingOrder}
-          >
-            Статус
-          </TableCell>
+            onSorting={onSorting}
+          />
         </TableRow>
       </TableHead>
       <TableBody className={styles.tableBody}>
