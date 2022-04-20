@@ -8,6 +8,7 @@ import { getSearchLine } from "../../store/selectors/searchLineSelector";
 
 import { createSetShowFilters } from "../../store/actionCreators/showFiltersCreator";
 import { createClearAllFilters } from "../../store/actionCreators/filtersCreator";
+import { createClearActiveFilter } from "../../store/actionCreators/activeFilterCreator";
 
 export const SearchFilterPanelContainer = () => {
   const searchLine = useSelector(getSearchLine);
@@ -24,6 +25,7 @@ export const SearchFilterPanelContainer = () => {
   const handleClearFilters = () => {
     dispatch(createClearSearchLaptopsLine());
     dispatch(createClearAllFilters());
+    dispatch(createClearActiveFilter());
   };
 
   const handleShowFilters = () => {

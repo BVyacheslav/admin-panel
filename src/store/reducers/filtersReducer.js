@@ -18,7 +18,6 @@ const initialState = {
   orderStatus: "",
   orderPriceStart: "",
   orderPriceFinish: "",
-  active: false,
 };
 
 export const filtersReducer = (state = initialState, { type, payload }) => {

@@ -3,7 +3,13 @@ import {
   CLEAR_ACTIVE_FILTER,
 } from "../constants/actionTypes";
 
-const initialState = {};
+const initialState = {
+  dateOrderingStart: "",
+  dateOrderingFinish: "",
+  orderStatus: "",
+  orderPriceStart: "",
+  orderPriceFinish: "",
+};
 
 export const activeFilterReducer = (
   state = initialState,
