@@ -16,7 +16,11 @@ export const LaptopsTable = ({
   sortingKey,
   sortingOrder,
   onSorting,
-  count = 0,
+  onCheckboxClick,
+  onAllCheckboxClick,
+  selectedLaptops,
+  isAllSelectedLaptops,
+  selectedLaptopsCount = 0,
 }) => {
   return (
     <div className={cx(styles.laptopsTable, className)}>
@@ -24,8 +28,8 @@ export const LaptopsTable = ({
         <TableRow>
           <TableCell>
             <Checkbox
-            // onChange={onAllCheckboxClick}
-            // checked={isAllSelectedIds}
+              checked={isAllSelectedLaptops}
+              onChange={onAllCheckboxClick}
             />
           </TableCell>
           <LaptopsTableHeader
@@ -39,7 +43,11 @@ export const LaptopsTable = ({
         {laptops.map((laptop) => (
           <TableRow key={laptop.id}>
             <TableCell>
-              <Checkbox />
+              <Checkbox
+                value={laptop.id}
+                checked={selectedLaptops.includes(laptop.id)}
+                onChange={onCheckboxClick}
+              />
             </TableCell>
             <TableCell key={laptop.id}>{laptop.id}</TableCell>
             <TableCell key={laptop.date}>{laptop.date}</TableCell>
@@ -60,7 +68,7 @@ export const LaptopsTable = ({
         ))}
       </TableBody>
       <TableFooter className={styles.tableFooter}>
-        Выбрано записей: {count}
+        Выбрано записей: {selectedLaptopsCount}
       </TableFooter>
     </div>
   );

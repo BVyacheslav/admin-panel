@@ -6,6 +6,7 @@ import { showFiltersReducer } from "./showFiltersReducer";
 import { filtersReducer } from "./filtersReducer";
 import { sortingReducer } from "./sortingReducer";
 import { activeFilterReducer } from "./activeFilterReducer";
+import { selectedLaptopsReducer } from "./selectedLaptopsReducer";
 
 export default combineReducers({
   laptops: laptopsReducer,
@@ -14,4 +15,5 @@ export default combineReducers({
   filters: filtersReducer,
   sorting: sortingReducer,
   activeFilter: activeFilterReducer,
+  selectedLaptops: selectedLaptopsReducer,
 });

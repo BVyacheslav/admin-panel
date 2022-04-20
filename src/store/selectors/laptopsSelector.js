@@ -5,6 +5,10 @@ import { getActiveFilter } from "./activeFiltersSelector";
 
 export const getLaptops = ({ laptops }) => laptops;
 
+export const getLaptopsIds = createSelector(getLaptops, (laptops) =>
+  laptops.map(({ id }) => id)
+);
+
 export const getPagination = () => ({
   start: 0,
   length: 100000,
