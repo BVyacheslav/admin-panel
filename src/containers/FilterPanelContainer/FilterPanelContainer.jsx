@@ -14,8 +14,9 @@ import {
   createClearOrderPriceStart,
   createSetOrderPriceFinish,
   createClearOrderPriceFinish,
-  createSetFilterActive,
 } from "../../store/actionCreators/filtersCreator";
+
+import { createSetActiveFilter } from "../../store/actionCreators/activeFilterCreator";
 
 export const FilterPanelContainer = () => {
   const showFilters = useSelector(getShowFilters);
@@ -58,7 +59,7 @@ export const FilterPanelContainer = () => {
   };
 
   const handleChangeFilterActive = () => {
-    dispatch(createSetFilterActive());
+    dispatch(createSetActiveFilter(filters));
   };
 
   return (

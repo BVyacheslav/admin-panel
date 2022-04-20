@@ -1,11 +1,7 @@
 import { LaptopsTable } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  getFilteredLaptops,
-  getSearchLaptops,
-} from "../../store/selectors/laptopsSelector";
-import { getFilters } from "../../store/selectors/filtersSelector";
 import { getSorting } from "../../store/selectors/sortingSelector";
+import { getLaptopsPart } from "../../store/selectors/laptopsSelector";
 
 import {
   createSetKeySorting,
@@ -13,9 +9,7 @@ import {
 } from "../../store/actionCreators/sortingCreator";
 
 export const LaptopsTableContainer = () => {
-  const filteredLaptops = useSelector(getFilteredLaptops);
-  const searchLaptops = useSelector(getSearchLaptops);
-  const filters = useSelector(getFilters);
+  const laptops = useSelector(getLaptopsPart);
   const sorting = useSelector(getSorting);
   const dispatch = useDispatch();
 
@@ -27,7 +21,7 @@ export const LaptopsTableContainer = () => {
 
   return (
     <LaptopsTable
-      laptops={filters.active ? filteredLaptops : searchLaptops}
+      laptops={laptops}
       sortingKey={sorting.key}
       sortingOrder={sorting.desc}
       onSorting={handleSorting}

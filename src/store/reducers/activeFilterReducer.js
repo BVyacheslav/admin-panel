@@ -1,6 +1,7 @@
-import // SET_ACTIVE_FILTER,
-// CLEAR_ACTIVE_FILTER,
-"../constants/actionTypes";
+import {
+  SET_ACTIVE_FILTER,
+  CLEAR_ACTIVE_FILTER,
+} from "../constants/actionTypes";
 
 const initialState = {};
 
@@ -9,11 +10,11 @@ export const activeFilterReducer = (
   { type, payload }
 ) => {
   switch (type) {
-    // case SET_ACTIVE_FILTER:
-    //   return payload;
+    case SET_ACTIVE_FILTER:
+      return payload;
 
-    // case CLEAR_ACTIVE_FILTER:
-    //   return {}
+    case CLEAR_ACTIVE_FILTER:
+      return {};
 
     default:
       return state;

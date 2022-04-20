@@ -1,6 +1,6 @@
 const initialState = [
   {
-    id: 111,
+    id: "111",
     date: "20.01.2021",
     brand: "Lenovo",
     model: "ideapad 3",
@@ -8,7 +8,7 @@ const initialState = [
     status: "В наличии",
   },
   {
-    id: 112,
+    id: "112",
     date: "25.01.2021",
     brand: "ASUS",
     model: "VivoBook Pro 15",
@@ -16,7 +16,7 @@ const initialState = [
     status: "Отсутствует",
   },
   {
-    id: 113,
+    id: "113",
     date: "14.02.2021",
     brand: "HP",
     model: "15s-eq1129ur",
