@@ -22,7 +22,7 @@ const initialState = {
   active: false,
 };
 
-const filtersReducer = (state = initialState, { type, payload }) => {
+export const filtersReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_FILTER_DATE_ORDERING_START:
       return { ...state, dateOrderingStart: payload };
@@ -59,4 +59,3 @@ const filtersReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export default filtersReducer;

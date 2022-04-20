@@ -5,7 +5,7 @@ const initialState = {
   desc: false,
 };
 
-const sortingReducer = (state = initialState, { type, payload }) => {
+export const sortingReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_KEY_SORTING:
       return { ...state, key: payload };
@@ -16,4 +16,3 @@ const sortingReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export default sortingReducer;

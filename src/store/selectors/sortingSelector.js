@@ -1,1 +1,1 @@
-export const getSorting = ({ sortingReducer }) => sortingReducer;
+export const getSorting = ({ sorting }) => sorting;

@@ -1,1 +1,1 @@
-export const getShowFilters = ({ showFiltersReducer }) => showFiltersReducer;
+export const getShowFilters = ({ showFilters }) => showFilters;

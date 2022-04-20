@@ -3,7 +3,7 @@ import { getSearchLine } from "./searchLineSelector";
 import { getFilters } from "./filtersSelector";
 import { getSorting } from "./sortingSelector";
 
-export const getLaptops = ({ laptopsReducer }) => laptopsReducer;
+export const getLaptops = ({ laptops }) => laptops;
 
 export const getSearchLaptops = createSelector(
   getLaptops,

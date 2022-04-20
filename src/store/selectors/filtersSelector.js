@@ -1,1 +1,1 @@
-export const getFilters = ({ filtersReducer }) => filtersReducer;
+export const getFilters = ({ filters }) => filters;

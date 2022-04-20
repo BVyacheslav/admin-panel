@@ -25,10 +25,9 @@ const initialState = [
   },
 ];
 
-const laptopsReducer = (state = initialState, { type }) => {
+export const laptopsReducer = (state = initialState, { type }) => {
   switch (type) {
     default:
       return state;
   }
 };
-export default laptopsReducer;

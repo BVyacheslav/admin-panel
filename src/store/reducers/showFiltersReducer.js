@@ -2,7 +2,7 @@ import { SET_SHOW_FILTERS } from "../constants/actionTypes";
 
 const initialState = false;
 
-const showFiltersReducer = (state = initialState, { type }) => {
+export const showFiltersReducer = (state = initialState, { type }) => {
   switch (type) {
     case SET_SHOW_FILTERS:
       return !state;
@@ -11,4 +11,3 @@ const showFiltersReducer = (state = initialState, { type }) => {
       return state;
   }
 };
-export default showFiltersReducer;

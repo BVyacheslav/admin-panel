@@ -1,1 +1,1 @@
-export const getSearchLine = ({ searchLineReducer }) => searchLineReducer;
+export const getSearchLine = ({ searchLine }) => searchLine;
