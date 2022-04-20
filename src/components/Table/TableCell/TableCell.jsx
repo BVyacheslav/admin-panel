@@ -10,10 +10,14 @@ export const TableCell = ({
   sortingOrder,
   ...props
 }) => {
+  const arrowIconClass = cx(styles.arrowIcon, {
+    [styles.reverseSort]: sortingOrder,
+  });
+
   return (
     <div className={cx(styles.tableCell, className)} {...props}>
       <label>{children}</label>
-      {sorting && <ArrowIcon className={styles.arrowIcon} />}
+      {sorting && <ArrowIcon className={arrowIconClass} />}
     </div>
   );
 };

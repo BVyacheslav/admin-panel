@@ -2,8 +2,15 @@
   display: flex;
   flex: 1;
   padding: 8px;
+  align-items: center;
 }
 
 .arrowIcon {
   fill: #ffffff;
+  height: 1rem;
+  width: 1rem;
+}
+
+.reverseSort {
+  transform: rotate(180deg);
 }
