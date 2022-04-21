@@ -5,6 +5,7 @@ import { TableBody } from "../Table";
 import { TableFooter } from "../Table";
 import { Checkbox } from "..";
 import { LaptopsTableHeader } from "./LaptopsTableHeader/LaptopsTableHeader";
+import { OrderForm } from "../../components/OrderForm/OrderForm";
 
 import cx from "classnames";
 
@@ -21,9 +22,12 @@ export const LaptopsTable = ({
   selectedLaptops,
   isAllSelectedLaptops,
   selectedLaptopsCount = 0,
+  editLaptop,
+  onEditLaptop,
 }) => {
   return (
     <div className={cx(styles.laptopsTable, className)}>
+      <OrderForm editLaptop={editLaptop} onEditLaptop={onEditLaptop} />
       <TableHead>
         <TableRow>
           <TableCell>
@@ -41,7 +45,7 @@ export const LaptopsTable = ({
       </TableHead>
       <TableBody className={styles.tableBody}>
         {laptops.map((laptop) => (
-          <TableRow key={laptop.id}>
+          <TableRow key={laptop.id} onClick={onEditLaptop(laptop.id)}>
             <TableCell>
               <Checkbox
                 value={laptop.id}

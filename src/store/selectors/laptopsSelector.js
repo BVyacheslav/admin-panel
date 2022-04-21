@@ -2,11 +2,19 @@ import { createSelector } from "reselect";
 import { getSearchLine } from "./searchLineSelector";
 import { getSorting } from "./sortingSelector";
 import { getActiveFilter } from "./activeFiltersSelector";
+import { getEditLaptop } from "./editLaptopSelector";
 
 export const getLaptops = ({ laptops }) => laptops;
 
 export const getLaptopsIds = createSelector(getLaptops, (laptops) =>
   laptops.map(({ id }) => id)
+);
+
+export const getLaptopForEdit = createSelector(
+  getLaptops,
+  getEditLaptop,
+  (laptops, editLaptop) =>
+    laptops.filter(({ id }) => editLaptop.length > 0 && id.includes(editLaptop))
 );
 
 export const getPagination = () => ({

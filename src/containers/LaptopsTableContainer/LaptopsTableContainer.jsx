@@ -4,6 +4,7 @@ import { getSorting } from "../../store/selectors/sortingSelector";
 import {
   getLaptopsPart,
   getLaptopsIds,
+  getLaptopForEdit,
 } from "../../store/selectors/laptopsSelector";
 import {
   createSetKeySorting,
@@ -19,6 +20,8 @@ import {
   getIsAllSelectedLaptops,
 } from "../../store/selectors/selectedLaptopsSelector";
 
+import { createSetEditLaptop } from "../../store/actionCreators/editLaptopCreator";
+
 export const LaptopsTableContainer = () => {
   const dispatch = useDispatch();
   const laptops = useSelector(getLaptopsPart);
@@ -27,6 +30,7 @@ export const LaptopsTableContainer = () => {
   const selectedLaptops = useSelector(getSelectedLaptops);
   const selectedLaptopsCount = useSelector(getSelectedLaptopsCount);
   const isAllSelectedLaptops = useSelector(getIsAllSelectedLaptops);
+  const editLaptop = useSelector(getLaptopForEdit);
 
   const handleSorting = (key) => {
     sorting.key === key
@@ -42,6 +46,10 @@ export const LaptopsTableContainer = () => {
     dispatch(createSetAllSelectedLaptops(laptopsIds));
   };
 
+  const handleSetEditLaptop = (value) => () => {
+    dispatch(createSetEditLaptop(value));
+  };
+
   return (
     <LaptopsTable
       laptops={laptops}
@@ -53,6 +61,8 @@ export const LaptopsTableContainer = () => {
       selectedLaptops={selectedLaptops}
       isAllSelectedLaptops={isAllSelectedLaptops}
       selectedLaptopsCount={selectedLaptopsCount}
+      editLaptop={editLaptop}
+      onEditLaptop={handleSetEditLaptop}
     />
   );
 };
