@@ -27,11 +27,7 @@ export const FilterPanelContainer = () => {
       showFilterPanel={isShow}
       onChangeFilterActive={handleChangeFilterActive}
       onChangeFilter={handleChangeFilter}
-      onClearDateOrderingStart={handleReset("dateOrderingStart")}
-      onClearDateOrderingFinish={handleReset("dateOrderingFinish")}
-      onClearOrderStatus={handleReset("orderStatus")}
-      onClearOrderPriceStart={handleReset("orderPriceStart")}
-      onClearOrderPriceFinish={handleReset("orderPriceFinish")}
+      onReset={handleReset}
     />
   );
 };

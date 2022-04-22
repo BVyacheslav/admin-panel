@@ -9,11 +9,7 @@ export const FilterPanel = ({
   filters,
   onChangeFilter,
   onChangeFilterActive,
-  onClearDateOrderingStart,
-  onClearDateOrderingFinish,
-  onClearOrderStatus,
-  onClearOrderPriceStart,
-  onClearOrderPriceFinish,
+  onReset,
 }) => {
   const filterPanelClass = cx(styles.filterPanel, {
     [styles.showFilterPanel]: showFilterPanel,
@@ -30,7 +26,7 @@ export const FilterPanel = ({
           placeholder="dd.mm.yyyy"
           value={filters.dateOrderingStart}
           onChange={onChangeFilter}
-          onClear={onClearDateOrderingStart}
+          onClear={onReset("dateOrderingStart")}
         />
         <Input
           className={styles.dateFinish}
@@ -38,7 +34,7 @@ export const FilterPanel = ({
           placeholder="dd.mm.yyyy"
           value={filters.dateOrderingFinish}
           onChange={onChangeFilter}
-          onClear={onClearDateOrderingFinish}
+          onClear={onReset("dateOrderingFinish")}
         />
 
         <InputWithLabel
@@ -48,7 +44,7 @@ export const FilterPanel = ({
           placeholder="Нажмите для выбора"
           value={filters.orderStatus}
           onChange={onChangeFilter}
-          onClear={onClearOrderStatus}
+          onClear={onReset("orderStatus")}
         />
 
         <InputWithLabel
@@ -58,7 +54,7 @@ export const FilterPanel = ({
           placeholder="₽"
           value={filters.orderPriceStart}
           onChange={onChangeFilter}
-          onClear={onClearOrderPriceStart}
+          onClear={onReset("orderPriceStart")}
         />
         <Input
           className={styles.priceFinish}
@@ -66,7 +62,7 @@ export const FilterPanel = ({
           placeholder="₽"
           value={filters.orderPriceFinish}
           onChange={onChangeFilter}
-          onClear={onClearOrderPriceFinish}
+          onClear={onReset("orderPriceFinish")}
         />
       </div>
       <Button variant="blue" size="medium" onClick={onChangeFilterActive}>
