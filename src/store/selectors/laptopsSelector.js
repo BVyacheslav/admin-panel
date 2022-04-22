@@ -14,7 +14,7 @@ export const getLaptopForEdit = createSelector(
   getLaptops,
   getEditLaptop,
   (laptops, editLaptop) =>
-    laptops.filter(({ id }) => editLaptop.length > 0 && id.includes(editLaptop))
+    laptops.find(({ id }) => editLaptop.length > 0 && id.includes(editLaptop))
 );
 
 export const getPagination = () => ({

@@ -1,5 +1,3 @@
-// import { useState } from 'react';
-
 import {
   TableCell,
   TableRow,
@@ -25,7 +23,7 @@ const headerCells = [
   },
 ];
 
-export const TableOrderForm = ({ className, laptops }) => {
+export const TableOrderForm = ({ className, editLaptop }) => {
   return (
     <div className={className}>
       <TableHead>
@@ -36,15 +34,15 @@ export const TableOrderForm = ({ className, laptops }) => {
         </TableRow>
       </TableHead>
       <TableBody className={styles.tableBody}>
-        {laptops.map((laptop) => (
-          <TableRow key={laptop.id}>
-            <TableCell key={laptop.brand}>{laptop.brand}</TableCell>
-            <TableCell key={laptop.model}>{laptop.model}</TableCell>
-            <TableCell key={laptop.price}>{laptop.price}</TableCell>
-          </TableRow>
-        ))}
+        <TableRow key={editLaptop.id}>
+          <TableCell key={editLaptop.brand}>{editLaptop.brand}</TableCell>
+          <TableCell key={editLaptop.model}>{editLaptop.model}</TableCell>
+          <TableCell key={editLaptop.price}>{editLaptop.price}</TableCell>
+        </TableRow>
       </TableBody>
-      <TableFooter className={styles.tableFooter}>Итоговая сумма:</TableFooter>
+      <TableFooter className={styles.tableFooter}>
+        Итоговая сумма: {editLaptop.price}
+      </TableFooter>
     </div>
   );
 };

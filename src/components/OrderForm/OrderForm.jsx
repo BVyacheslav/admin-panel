@@ -9,10 +9,10 @@ import { ReactComponent as CloseIcon } from "../../icons/x-medium.svg";
 import styles from "./OrderForm.module.css";
 
 export const OrderForm = ({ className, editLaptop, onEditLaptop }) => {
-  const [isShow, setIsShow] = useState(editLaptop.length > 0 ? true : false);
+  const [isShow, setIsShow] = useState(editLaptop ? true : false);
 
   useEffect(() => {
-    setIsShow(editLaptop.length > 0 ? true : false);
+    setIsShow(editLaptop ? true : false);
   }, [editLaptop]);
 
   const modalWrapperClass = cx(styles.modalWrapper, {
@@ -22,79 +22,60 @@ export const OrderForm = ({ className, editLaptop, onEditLaptop }) => {
 
   return (
     <div className={modalWrapperClass}>
-      <div className={styles.card}>
-        <div className={styles.cardHeader}>
-          <span className={styles.cardHeaderText}>Заявка #</span>
-          <button onClick={onEditLaptop("")} className={styles.closeButton}>
-            <CloseIcon className={styles.closeIcon} />
-          </button>
+      {editLaptop && (
+        <div className={styles.card}>
+          <div className={styles.cardHeader}>
+            <span className={styles.cardHeaderText}>
+              Заявка #{editLaptop.id}
+            </span>
+            <button onClick={onEditLaptop("")} className={styles.closeButton}>
+              <CloseIcon className={styles.closeIcon} />
+            </button>
+          </div>
+          <div className={styles.orderForm}>
+            <InputWithLabel
+              className={styles.orderFormElement}
+              label="Дата оформления"
+              placeholder="dd.mm.yyyy"
+              disabled
+              value={editLaptop.date}
+            />
+
+            <TableOrderForm
+              className={styles.orderFormElement}
+              editLaptop={editLaptop}
+            />
+
+            <InputWithLabel
+              className={styles.orderFormElement}
+              label="Статус заказа"
+              // FIXME:
+              //  value={editLaptop.status}
+              //  onChange={onChangeOrderStatus}
+            />
+
+            <InputWithLabel
+              className={styles.orderFormElement}
+              label="Код подтверждения"
+              defaultValue="000"
+              error
+            />
+          </div>
+          <div className={styles.cardFooter}>
+            <span className={styles.cardFooterText}>
+              Ошибка или индикатор загрузки
+            </span>
+            <Button
+              variant="white"
+              size="medium"
+              icon={FilterIcon}
+              onClick={onEditLaptop("")}
+            >
+              Сохранить
+            </Button>
+          </div>
         </div>
-        <div className={styles.orderForm}>
-          <InputWithLabel
-            className={styles.orderFormElement}
-            label="Дата оформления"
-            placeholder="dd.mm.yyyy"
-            disabled
-            // value={filters.dateOrderingStart}
-            // onChange={onChangeDateOrderingStart}
-            // onClear={onClearDateOrderingStart}
-          />
-
-          <InputWithLabel
-            className={styles.orderFormElement}
-            label="Статус заказа"
-            placeholder="Нажмите для выбора"
-            // value={filters.orderStatus}
-            // onChange={onChangeOrderStatus}
-            // onClear={onClearOrderStatus}
-          />
-
-          <TableOrderForm
-            className={styles.orderFormElement}
-            laptops={editLaptop}
-          />
-
-          <InputWithLabel
-            className={styles.orderFormElement}
-            label="Сумма заказа"
-            placeholder="₽"
-            // value={filters.orderPriceStart}
-            // onChange={onChangeOrderPriceStart}
-            // onClear={onClearOrderPriceStart}
-          />
-
-          <InputWithLabel
-            className={styles.orderFormElement}
-            label="Сумма заказа"
-            placeholder="₽"
-            // value={filters.orderPriceStart}
-            // onChange={onChangeOrderPriceStart}
-            // onClear={onClearOrderPriceStart}
-          />
-
-          <InputWithLabel
-            className={styles.orderFormElement}
-            label="Сумма заказа"
-            placeholder="₽"
-            // value={filters.orderPriceStart}
-            // onChange={onChangeOrderPriceStart}
-            // onClear={onClearOrderPriceStart}
-          />
-        </div>
-        <div className={styles.cardFooter}>
-          <span className={styles.cardFooterText}>
-            Ошибка или индикатор загрузки
-          </span>
-          <Button
-            variant="white"
-            size="medium"
-            icon={FilterIcon}
-            onClick={onEditLaptop("")}
-          >
-            Сохранить
-          </Button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
