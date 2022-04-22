@@ -2,7 +2,7 @@ import { LaptopsTable } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
 import { getSorting } from "store/selectors/sortingSelector";
 import {
-  getLaptopsPart,
+  getLaptops,
   getLaptopsIds,
   getLaptopForEdit,
 } from "store/selectors/laptopsSelector";
@@ -24,7 +24,7 @@ import { createSetEditLaptop } from "store/actionCreators/editLaptopCreator";
 
 export const LaptopsTableContainer = () => {
   const dispatch = useDispatch();
-  const laptops = useSelector(getLaptopsPart);
+  const laptops = useSelector(getLaptops);
   const laptopsIds = useSelector(getLaptopsIds);
   const sorting = useSelector(getSorting);
   const selectedLaptops = useSelector(getSelectedLaptops);
@@ -54,7 +54,7 @@ export const LaptopsTableContainer = () => {
     <LaptopsTable
       laptops={laptops}
       sortingKey={sorting.key}
-      sortingOrder={sorting.desc}
+      sortingOrder={sorting.sortDirection}
       onSorting={handleSorting}
       onCheckboxClick={handleCheckboxClick}
       onAllCheckboxClick={handleAllCheckboxClick}

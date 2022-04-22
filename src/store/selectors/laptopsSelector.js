@@ -4,14 +4,14 @@ import { getActiveFilter } from "./activeFiltersSelector";
 import { getFilters } from "./filtersSelector";
 import { getEditLaptop } from "./editLaptopSelector";
 
-export const getLaptops = ({ laptops }) => laptops;
+export const getAllLaptops = ({ laptops }) => laptops;
 
-export const getLaptopsIds = createSelector(getLaptops, (laptops) =>
+export const getLaptopsIds = createSelector(getAllLaptops, (laptops) =>
   laptops.map(({ id }) => id)
 );
 
 export const getLaptopForEdit = createSelector(
-  getLaptops,
+  getAllLaptops,
   getEditLaptop,
   (laptops, editLaptop) =>
     laptops.find(({ id }) => editLaptop.length > 0 && id.includes(editLaptop))
@@ -22,121 +22,54 @@ export const getPagination = () => ({
   length: 100000,
 });
 
-export const createSort = (key, desc) => (a, b) => {
-  if (key === "date") {
-    if (desc) {
-      if (
-        Date.parse(
-          `${a[key].slice(6, 10)}-${a[key].slice(3, 5)}-${a[key].slice(0, 2)}`
-        ) <
-        Date.parse(
-          `${b[key].slice(6, 10)}-${b[key].slice(3, 5)}-${b[key].slice(0, 2)}`
-        )
-      ) {
-        return 1;
-      }
-      if (
-        Date.parse(
-          `${a[key].slice(6, 10)}-${a[key].slice(3, 5)}-${a[key].slice(0, 2)}`
-        ) >
-        Date.parse(
-          `${b[key].slice(6, 10)}-${b[key].slice(3, 5)}-${b[key].slice(0, 2)}`
-        )
-      ) {
-        return -1;
-      }
-      return 0;
-    } else {
-      if (
-        Date.parse(
-          `${a[key].slice(6, 10)}-${a[key].slice(3, 5)}-${a[key].slice(0, 2)}`
-        ) >
-        Date.parse(
-          `${b[key].slice(6, 10)}-${b[key].slice(3, 5)}-${b[key].slice(0, 2)}`
-        )
-      ) {
-        return 1;
-      }
-      if (
-        Date.parse(
-          `${a[key].slice(6, 10)}-${a[key].slice(3, 5)}-${a[key].slice(0, 2)}`
-        ) <
-        Date.parse(
-          `${b[key].slice(6, 10)}-${b[key].slice(3, 5)}-${b[key].slice(0, 2)}`
-        )
-      ) {
-        return -1;
-      }
-      return 0;
-    }
-  }
-  if (desc) {
-    if (a[key] < b[key]) {
-      return 1;
-    }
-    if (a[key] > b[key]) {
-      return -1;
-    }
-    return 0;
-  } else {
-    if (a[key] > b[key]) {
-      return 1;
-    }
-    if (a[key] < b[key]) {
-      return -1;
-    }
-    return 0;
-  }
+const stringDateToMilliseconds = (string) => {
+  const [day, month, year] = string.split(".");
+  return Date.parse(`${year}-${month}-${day}`);
 };
 
-export const createLaptopsFilter =
-  ({
-    dateOrderingStart,
-    dateOrderingFinish,
-    orderStatus,
-    orderPriceStart,
-    orderPriceFinish,
-  }) =>
-  ({ date, price, status }) => {
-    let validation = true;
-    if (dateOrderingStart && dateOrderingFinish) {
-      validation =
-        validation &&
-        Date.parse(
-          `${date.slice(6, 10)}-${date.slice(3, 5)}-${date.slice(0, 2)}`
-        ) >=
-          Date.parse(
-            `${dateOrderingStart.slice(6, 10)}-${dateOrderingStart.slice(
-              3,
-              5
-            )}-${dateOrderingStart.slice(0, 2)}`
-          ) &&
-        Date.parse(
-          `${date.slice(6, 10)}-${date.slice(3, 5)}-${date.slice(0, 2)}`
-        ) <=
-          Date.parse(
-            `${dateOrderingFinish.slice(6, 10)}-${dateOrderingFinish.slice(
-              3,
-              5
-            )}-${dateOrderingFinish.slice(0, 2)}`
-          );
+export const createSort = (key, sortDirection) => (a, b) => {
+  let valueA = a[key];
+  let valueB = b[key];
+  if (key === "date") {
+    valueA = stringDateToMilliseconds(a[key]);
+    valueB = stringDateToMilliseconds(b[key]);
+  }
+  if (sortDirection === "asc") {
+    if (valueA < valueB) {
+      return -1;
     }
+    if (valueA > valueB) {
+      return 1;
+    }
+    return 0;
+  }
+  if (valueA > valueB) {
+    return -1;
+  }
+  if (valueA < valueB) {
+    return 1;
+  }
+  return 0;
+};
 
-    if (orderStatus) {
-      validation = validation && status.includes(orderStatus);
-    }
+const isInRange = (min = 0, max = Number.MAX_SAFE_INTEGER, value = 0) => {
+  if (min || max) {
+    return value >= min && value <= max;
+  }
+  return true;
+};
 
-    if (orderPriceStart && orderPriceFinish) {
-      validation =
-        validation &&
-        price > Number(orderPriceStart) &&
-        price < Number(orderPriceFinish);
-    }
-    return validation;
-  };
+const isStringsEqual = (str1, str2) => {
+  if (str1) {
+    return str1.toLowerCase() === str2.toLowerCase();
+  }
+  return true;
+};
+
+const areAllTruthy = (values) => values.every(Boolean);
 
 export const getSearchLaptops = createSelector(
-  getLaptops,
+  getAllLaptops,
   getFilters,
   (laptops, { search }) =>
     laptops.filter(
@@ -146,20 +79,26 @@ export const getSearchLaptops = createSelector(
     )
 );
 
-export const getFilteredLaptops = createSelector(
+export const getLaptops = createSelector(
   getSearchLaptops,
   getActiveFilter,
-  (laptops, filters) => laptops.filter(createLaptopsFilter(filters))
-);
-
-export const getSortedLaptops = createSelector(
-  getFilteredLaptops,
   getSorting,
-  (laptops, { key, desc }) => laptops.sort(createSort(key, desc))
-);
-
-export const getLaptopsPart = createSelector(
-  getSortedLaptops,
-  getPagination,
-  (laptops, { start, length }) => laptops.slice(start, length)
+  (laptops, filters, { key, sortDirection }) => {
+    const {
+      dateOrderingStart,
+      dateOrderingFinish,
+      orderStatus,
+      orderPriceStart,
+      orderPriceFinish,
+    } = filters;
+    return laptops
+      .filter((laptop) =>
+        areAllTruthy([
+          isInRange(orderPriceStart, orderPriceFinish, laptop.price),
+          isInRange(dateOrderingStart, dateOrderingFinish, laptop.date),
+          isStringsEqual(orderStatus, laptop.status),
+        ])
+      )
+      .sort(createSort(key, sortDirection));
+  }
 );

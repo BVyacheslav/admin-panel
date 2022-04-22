@@ -11,7 +11,7 @@ export const TableCell = ({
   ...props
 }) => {
   const arrowIconClass = cx(styles.arrowIcon, {
-    [styles.reverseSort]: sortingOrder,
+    [styles.reverseSort]: sortingOrder === "desc",
   });
 
   return (
