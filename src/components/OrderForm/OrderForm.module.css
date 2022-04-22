@@ -27,6 +27,21 @@
   margin-bottom: 2rem;
 }
 
+.inputDropdown {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.showDropdown {
+  display: flex;
+}
+
 .card {
   display: flex;
   flex-direction: column;
