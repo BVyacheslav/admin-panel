@@ -17,8 +17,8 @@ export const SearchFilterPanelContainer = () => {
     dispatch(createSetFilter({ name, value }));
   };
 
-  const handleClear = (name, value) => {
-    dispatch(createSetFilter({ name, value }));
+  const handleReset = (key) => () => {
+    dispatch(createSetFilter({ name: key, value: "" }));
   };
 
   const handleClearFilters = () => {
@@ -33,7 +33,7 @@ export const SearchFilterPanelContainer = () => {
   return (
     <SearchFilterPanel
       onChange={handleChangeSearch}
-      onClear={handleClear}
+      onClear={handleReset("search")}
       value={search}
       onClearFilters={handleClearFilters}
       onShowFilters={handleShowFilters}

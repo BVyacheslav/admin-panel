@@ -7,17 +7,13 @@ export const FilterPanel = ({
   className,
   showFilterPanel,
   filters,
-  onChangeDateOrderingStart,
-  onClearDateOrderingStart,
-  onChangeDateOrderingFinish,
-  onClearDateOrderingFinish,
-  onChangeOrderStatus,
-  onClearOrderStatus,
-  onChangeOrderPriceStart,
-  onClearOrderPriceStart,
-  onChangeOrderPriceFinish,
-  onClearOrderPriceFinish,
+  onChangeFilter,
   onChangeFilterActive,
+  onClearDateOrderingStart,
+  onClearDateOrderingFinish,
+  onClearOrderStatus,
+  onClearOrderPriceStart,
+  onClearOrderPriceFinish,
 }) => {
   const filterPanelClass = cx(styles.filterPanel, {
     [styles.showFilterPanel]: showFilterPanel,
@@ -29,42 +25,47 @@ export const FilterPanel = ({
       <div className={styles.filters}>
         <InputWithLabel
           className={styles.dateStart}
+          name="dateOrderingStart"
           label="Дата оформления"
           placeholder="dd.mm.yyyy"
           value={filters.dateOrderingStart}
-          onChange={onChangeDateOrderingStart}
+          onChange={onChangeFilter}
           onClear={onClearDateOrderingStart}
         />
         <Input
           className={styles.dateFinish}
+          name="dateOrderingFinish"
           placeholder="dd.mm.yyyy"
           value={filters.dateOrderingFinish}
-          onChange={onChangeDateOrderingFinish}
+          onChange={onChangeFilter}
           onClear={onClearDateOrderingFinish}
         />
 
         <InputWithLabel
           className={styles.status}
+          name="orderStatus"
           label="Статус заказа"
           placeholder="Нажмите для выбора"
           value={filters.orderStatus}
-          onChange={onChangeOrderStatus}
+          onChange={onChangeFilter}
           onClear={onClearOrderStatus}
         />
 
         <InputWithLabel
           className={styles.priceStart}
+          name="orderPriceStart"
           label="Сумма заказа"
           placeholder="₽"
           value={filters.orderPriceStart}
-          onChange={onChangeOrderPriceStart}
+          onChange={onChangeFilter}
           onClear={onClearOrderPriceStart}
         />
         <Input
           className={styles.priceFinish}
+          name="orderPriceFinish"
           placeholder="₽"
           value={filters.orderPriceFinish}
-          onChange={onChangeOrderPriceFinish}
+          onChange={onChangeFilter}
           onClear={onClearOrderPriceFinish}
         />
       </div>
