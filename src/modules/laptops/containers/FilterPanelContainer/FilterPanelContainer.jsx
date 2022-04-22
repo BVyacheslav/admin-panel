@@ -1,13 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import { FilterPanel } from "../../components";
-import { getShowFilters } from "store/selectors/showFiltersSelector";
 import { getFilters } from "store/selectors/filtersSelector";
 import { createSetFilter } from "store/actionCreators/filtersCreator";
 import { createSetActiveFilter } from "store/actionCreators/activeFilterCreator";
 
 export const FilterPanelContainer = () => {
-  const showFilters = useSelector(getShowFilters);
   const filters = useSelector(getFilters);
+  const { isShow } = useSelector(getFilters);
   const dispatch = useDispatch();
 
   const createHandleChange =
@@ -27,7 +26,7 @@ export const FilterPanelContainer = () => {
   return (
     <FilterPanel
       filters={filters}
-      showFilterPanel={showFilters}
+      showFilterPanel={isShow}
       onChangeFilterActive={handleChangeFilterActive}
       onChangeDateOrderingStart={createHandleChange("dateOrderingStart")}
       onClearDateOrderingStart={createHandleChange("dateOrderingStart", true)}

@@ -1,42 +1,40 @@
 import { SearchFilterPanel } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  createSetSearchLaptopsLine,
-  createClearSearchLaptopsLine,
-} from "store/actionCreators/searchLineCreator";
-import { getSearchLine } from "store/selectors/searchLineSelector";
+import { getFilters } from "store/selectors/filtersSelector";
 
-import { createSetShowFilters } from "store/actionCreators/showFiltersCreator";
-import { createClearAllFilters } from "store/actionCreators/filtersCreator";
+import {
+  createSetFilter,
+  createClearAllFilters,
+  createSetShowFilter,
+} from "store/actionCreators/filtersCreator";
 import { createClearActiveFilter } from "store/actionCreators/activeFilterCreator";
 
 export const SearchFilterPanelContainer = () => {
-  const searchLine = useSelector(getSearchLine);
+  const { search } = useSelector(getFilters);
   const dispatch = useDispatch();
 
-  const handleChangeSearch = ({ target: { value } }) => {
-    dispatch(createSetSearchLaptopsLine(value));
+  const handleChangeSearch = ({ target: { name, value } }) => {
+    dispatch(createSetFilter({ name, value }));
   };
 
-  const handleClear = () => {
-    dispatch(createClearSearchLaptopsLine());
+  const handleClear = (name, value) => {
+    dispatch(createSetFilter({ name, value }));
   };
 
   const handleClearFilters = () => {
-    dispatch(createClearSearchLaptopsLine());
     dispatch(createClearAllFilters());
     dispatch(createClearActiveFilter());
   };
 
   const handleShowFilters = () => {
-    dispatch(createSetShowFilters());
+    dispatch(createSetShowFilter());
   };
 
   return (
     <SearchFilterPanel
       onChange={handleChangeSearch}
       onClear={handleClear}
-      value={searchLine}
+      value={search}
       onClearFilters={handleClearFilters}
       onShowFilters={handleShowFilters}
     />

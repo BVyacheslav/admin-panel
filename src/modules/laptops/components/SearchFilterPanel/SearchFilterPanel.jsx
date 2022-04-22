@@ -19,6 +19,7 @@ export const SearchFilterPanel = ({
       <div className={styles.searchFilter}>
         <Input
           className={styles.search}
+          name="search"
           search
           value={value}
           placeholder="Номер или бренд"
