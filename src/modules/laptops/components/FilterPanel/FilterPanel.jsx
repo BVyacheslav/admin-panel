@@ -1,7 +1,5 @@
-import { Input, Button } from "..";
 import cx from "classnames";
-
-import { InputWithLabel } from "../";
+import { Input, Button, InputWithLabel } from "components/";
 
 import styles from "./FilterPanel.module.css";
 

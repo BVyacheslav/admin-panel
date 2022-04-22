@@ -1,4 +1,4 @@
-import { TableCell } from "../../Table";
+import { TableCell } from "components/Table";
 
 const initialCells = [
   {

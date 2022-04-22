@@ -4,7 +4,7 @@ import {
   TableHead,
   TableBody,
   TableFooter,
-} from "../../Table";
+} from "components/Table";
 
 import styles from "./TableOrderForm.module.css";
 

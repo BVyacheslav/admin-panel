@@ -1,8 +1,10 @@
-import { LaptopsTableContainer } from "../../../containers";
-import { SearchFilterPanelContainer } from "../../../containers";
-import { FilterPanelContainer } from "../../../containers";
+import {
+  LaptopsTableContainer,
+  SearchFilterPanelContainer,
+  FilterPanelContainer,
+} from "../../containers/";
 
-import { Header } from "../..";
+import { Header } from "../../components/Header/Header";
 
 import cx from "classnames";
 

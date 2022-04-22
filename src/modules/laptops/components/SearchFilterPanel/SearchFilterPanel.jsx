@@ -1,8 +1,8 @@
-import { Input, Button } from "../";
+import { Input, Button } from "components";
 import cx from "classnames";
 
-import { ReactComponent as FilterIcon } from "../../icons/filter.svg";
-import { ReactComponent as RefreshIcon } from "../../icons/refresh.svg";
+import { ReactComponent as FilterIcon } from "icons/filter.svg";
+import { ReactComponent as RefreshIcon } from "icons/refresh.svg";
 
 import styles from "./SearchFilterPanel.module.css";
 

@@ -1,11 +1,13 @@
-import { TableCell } from "../Table";
-import { TableRow } from "../Table";
-import { TableHead } from "../Table";
-import { TableBody } from "../Table";
-import { TableFooter } from "../Table";
-import { Checkbox } from "..";
+import {
+  TableCell,
+  TableRow,
+  TableHead,
+  TableBody,
+  TableFooter,
+} from "components/Table";
+import { Checkbox } from "components";
 import { LaptopsTableHeader } from "./LaptopsTableHeader/LaptopsTableHeader";
-import { OrderForm } from "../../components/OrderForm/OrderForm";
+import { OrderForm } from "../../components/";
 
 import cx from "classnames";
 

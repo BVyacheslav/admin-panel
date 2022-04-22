@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { RadioWithLabel } from "../";
+import { RadioWithLabel } from "components";
 import cx from "classnames";
 import styles from "./DropdownRadio.module.css";
 

@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Button } from "..";
 import cx from "classnames";
-import { InputWithLabel } from "..";
+import { Button, InputWithLabel } from "components";
 import { TableOrderForm } from "./TableOrderForm/TableOrderForm";
-import { DropdownRadio } from "../DropdownRadio/DropdownRadio";
-import { ReactComponent as FilterIcon } from "../../icons/checkmark.svg";
-import { ReactComponent as CloseIcon } from "../../icons/x-medium.svg";
+import { DropdownRadio } from "../";
+import { ReactComponent as FilterIcon } from "icons/checkmark.svg";
+import { ReactComponent as CloseIcon } from "icons/x-medium.svg";
 
 import styles from "./OrderForm.module.css";
 

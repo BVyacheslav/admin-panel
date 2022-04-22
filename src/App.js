@@ -1,4 +1,4 @@
-import { LaptopsPage } from "./components/";
+import { LaptopsPage } from "./modules/laptops/Pages/LaptopsPage/LaptopsPage";
 
 import "./style/reset.css";
 

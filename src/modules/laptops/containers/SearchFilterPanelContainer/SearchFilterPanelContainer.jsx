@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   createSetSearchLaptopsLine,
   createClearSearchLaptopsLine,
-} from "../../store/actionCreators/searchLineCreator";
-import { getSearchLine } from "../../store/selectors/searchLineSelector";
+} from "store/actionCreators/searchLineCreator";
+import { getSearchLine } from "store/selectors/searchLineSelector";
 
-import { createSetShowFilters } from "../../store/actionCreators/showFiltersCreator";
-import { createClearAllFilters } from "../../store/actionCreators/filtersCreator";
-import { createClearActiveFilter } from "../../store/actionCreators/activeFilterCreator";
+import { createSetShowFilters } from "store/actionCreators/showFiltersCreator";
+import { createClearAllFilters } from "store/actionCreators/filtersCreator";
+import { createClearActiveFilter } from "store/actionCreators/activeFilterCreator";
 
 export const SearchFilterPanelContainer = () => {
   const searchLine = useSelector(getSearchLine);

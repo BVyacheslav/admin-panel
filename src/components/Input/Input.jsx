@@ -1,8 +1,8 @@
 import cx from "classnames";
 
-import { ReactComponent as DeleteIcon } from "../../icons/x-medium.svg";
-import { ReactComponent as LockedIcon } from "../../icons/locked.svg";
-import { ReactComponent as SearchIcon } from "../../icons/search.svg";
+import { ReactComponent as DeleteIcon } from "icons/x-medium.svg";
+import { ReactComponent as LockedIcon } from "icons/locked.svg";
+import { ReactComponent as SearchIcon } from "icons/search.svg";
 
 import styles from "./Input.module.css";
 

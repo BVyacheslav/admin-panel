@@ -1,5 +1,5 @@
 import cx from "classnames";
-import { ReactComponent as ArrowIcon } from "../../../icons/v_arrow.svg";
+import { ReactComponent as ArrowIcon } from "icons/v_arrow.svg";
 
 import styles from "./TableCell.module.css";
 

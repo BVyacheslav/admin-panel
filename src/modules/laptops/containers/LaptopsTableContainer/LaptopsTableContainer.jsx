@@ -1,26 +1,26 @@
 import { LaptopsTable } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
-import { getSorting } from "../../store/selectors/sortingSelector";
+import { getSorting } from "store/selectors/sortingSelector";
 import {
   getLaptopsPart,
   getLaptopsIds,
   getLaptopForEdit,
-} from "../../store/selectors/laptopsSelector";
+} from "store/selectors/laptopsSelector";
 import {
   createSetKeySorting,
   createSetOrderSorting,
-} from "../../store/actionCreators/sortingCreator";
+} from "store/actionCreators/sortingCreator";
 import {
   createSetAllSelectedLaptops,
   createSetSelectedLaptops,
-} from "../../store/actionCreators/selectedLaptopsActionCreator";
+} from "store/actionCreators/selectedLaptopsActionCreator";
 import {
   getSelectedLaptops,
   getSelectedLaptopsCount,
   getIsAllSelectedLaptops,
-} from "../../store/selectors/selectedLaptopsSelector";
+} from "store/selectors/selectedLaptopsSelector";
 
-import { createSetEditLaptop } from "../../store/actionCreators/editLaptopCreator";
+import { createSetEditLaptop } from "store/actionCreators/editLaptopCreator";
 
 export const LaptopsTableContainer = () => {
   const dispatch = useDispatch();

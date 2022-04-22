@@ -1,6 +1,6 @@
 import cx from "classnames";
-import { Button } from "../";
-import { ReactComponent as SunIcon } from "../../icons/sun.svg";
+import { Button } from "components";
+import { ReactComponent as SunIcon } from "icons/sun.svg";
 
 import styles from "./Header.module.css";
 

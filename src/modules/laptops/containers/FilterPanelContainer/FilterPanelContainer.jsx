@@ -1,9 +1,9 @@
-import { FilterPanel } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
-import { getShowFilters } from "../../store/selectors/showFiltersSelector";
-import { getFilters } from "../../store/selectors/filtersSelector";
-import { createSetFilter } from "../../store/actionCreators/filtersCreator";
-import { createSetActiveFilter } from "../../store/actionCreators/activeFilterCreator";
+import { FilterPanel } from "../../components";
+import { getShowFilters } from "store/selectors/showFiltersSelector";
+import { getFilters } from "store/selectors/filtersSelector";
+import { createSetFilter } from "store/actionCreators/filtersCreator";
+import { createSetActiveFilter } from "store/actionCreators/activeFilterCreator";
 
 export const FilterPanelContainer = () => {
   const showFilters = useSelector(getShowFilters);
