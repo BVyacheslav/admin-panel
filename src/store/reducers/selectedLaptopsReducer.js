@@ -1,9 +1,14 @@
 import {
   SET_ALL_SELECTED_LAPTOPS,
   SET_SELECTED_LAPTOPS,
+  CLEAR_SELECTED_LAPTOPS,
 } from "../constants/actionTypes";
 
 const initialState = [];
+
+const xor = (arr, item) => {
+  return arr.includes(item) ? arr.filter((el) => el !== item) : [...arr, item];
+};
 
 export const selectedLaptopsReducer = (
   state = initialState,
@@ -13,16 +18,11 @@ export const selectedLaptopsReducer = (
     case SET_ALL_SELECTED_LAPTOPS: {
       return payload;
     }
+    case CLEAR_SELECTED_LAPTOPS: {
+      return [];
+    }
     case SET_SELECTED_LAPTOPS: {
-      return Object.keys(
-        [...state, ...payload].reduce(
-          ({ [id]: currentId, ...rest }, id) => ({
-            ...rest,
-            ...(currentId === id ? {} : { [id]: id }),
-          }),
-          {}
-        )
-      );
+      return xor(state, payload);
     }
     default:
       return state;

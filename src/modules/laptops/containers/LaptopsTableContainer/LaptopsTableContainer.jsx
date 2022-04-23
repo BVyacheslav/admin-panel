@@ -14,6 +14,7 @@ import {
 import {
   createSetAllSelectedLaptops,
   createSetSelectedLaptops,
+  createClearSelectedLaptops,
 } from "store/actionCreators/selectedLaptopsActionCreator";
 import {
   getSelectedLaptops,
@@ -40,12 +41,14 @@ export const LaptopsTableContainer = () => {
       : dispatch(createSetKeySorting(key));
   };
 
-  const handleCheckboxClick = ({ target: { value } }) => {
-    dispatch(createSetSelectedLaptops([value]));
+  const handleCheckboxClick = (e) => {
+    dispatch(createSetSelectedLaptops(e.target.value));
   };
 
   const handleAllCheckboxClick = () => {
-    dispatch(createSetAllSelectedLaptops(laptopsIds));
+    isAllSelectedLaptops
+      ? dispatch(createClearSelectedLaptops())
+      : dispatch(createSetAllSelectedLaptops(laptopsIds));
   };
 
   const handleSetEditLaptop = (value) => () => {
