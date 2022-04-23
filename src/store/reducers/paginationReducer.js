@@ -2,7 +2,7 @@ import { SET_PAGE } from "../constants/actionTypes";
 
 const initialState = {
   page: 1,
-  length: 5,
+  length: 10,
 };
 
 export const paginationReducer = (state = initialState, { type, payload }) => {
