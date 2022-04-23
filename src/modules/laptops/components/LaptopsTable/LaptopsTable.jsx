@@ -31,51 +31,53 @@ export const LaptopsTable = ({
   onSetPage,
 }) => {
   return (
-    <div className={cx(styles.laptopsTable, className)}>
-      <OrderForm editLaptop={editLaptop} onEditLaptop={onEditLaptop} />
-      <TableHead>
-        <TableRow>
-          <TableCell>
-            <Checkbox
-              checked={isAllSelectedLaptops}
-              onChange={onAllCheckboxClick}
-            />
-          </TableCell>
-          <LaptopsTableHeader
-            sortingKey={sortingKey}
-            sortingOrder={sortingOrder}
-            onSorting={onSorting}
-          />
-        </TableRow>
-      </TableHead>
-      <TableBody className={styles.tableBody}>
-        {laptops.map((laptop) => (
-          <TableRow key={laptop.id} onClick={onEditLaptop(laptop.id)}>
+    <div className={cx(styles.wrapperTable, className)}>
+      <div className={styles.laptopsTable}>
+        <OrderForm editLaptop={editLaptop} onEditLaptop={onEditLaptop} />
+        <TableHead>
+          <TableRow>
             <TableCell>
               <Checkbox
-                value={laptop.id}
-                checked={selectedLaptops.includes(laptop.id)}
-                onChange={onCheckboxClick}
+                checked={isAllSelectedLaptops}
+                onChange={onAllCheckboxClick}
               />
             </TableCell>
-            <TableCell key={laptop.id}>{laptop.id}</TableCell>
-            <TableCell key={laptop.date}>{laptop.date}</TableCell>
-            <TableCell key={laptop.brand}>{laptop.brand}</TableCell>
-            <TableCell key={laptop.model}>{laptop.model}</TableCell>
-            <TableCell key={laptop.price}>{laptop.price}</TableCell>
-            <TableCell
-              key={laptop.status}
-              className={
-                laptop.status === "В наличии"
-                  ? styles.inStock
-                  : styles.outOfStock
-              }
-            >
-              {laptop.status}
-            </TableCell>
+            <LaptopsTableHeader
+              sortingKey={sortingKey}
+              sortingOrder={sortingOrder}
+              onSorting={onSorting}
+            />
           </TableRow>
-        ))}
-      </TableBody>
+        </TableHead>
+        <TableBody className={styles.tableBody}>
+          {laptops.map((laptop) => (
+            <TableRow key={laptop.id} onClick={onEditLaptop(laptop.id)}>
+              <TableCell>
+                <Checkbox
+                  value={laptop.id}
+                  checked={selectedLaptops.includes(laptop.id)}
+                  onChange={onCheckboxClick}
+                />
+              </TableCell>
+              <TableCell key={laptop.id}>{laptop.id}</TableCell>
+              <TableCell key={laptop.date}>{laptop.date}</TableCell>
+              <TableCell key={laptop.brand}>{laptop.brand}</TableCell>
+              <TableCell key={laptop.model}>{laptop.model}</TableCell>
+              <TableCell key={laptop.price}>{laptop.price}</TableCell>
+              <TableCell
+                key={laptop.status}
+                className={
+                  laptop.status === "В наличии"
+                    ? styles.inStock
+                    : styles.outOfStock
+                }
+              >
+                {laptop.status}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </div>
       <TableFooter className={styles.tableFooter}>
         <div>Выбрано записей: {selectedLaptopsCount}</div>
         <Pagination laptopPages={laptopPages} onSetPage={onSetPage} />
