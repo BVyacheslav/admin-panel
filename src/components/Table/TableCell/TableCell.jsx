@@ -16,7 +16,7 @@ export const TableCell = ({
 
   return (
     <div className={cx(styles.tableCell, className)} {...props}>
-      <label>{children}</label>
+      <span>{children}</span>
       {sorting && <ArrowIcon className={arrowIconClass} />}
     </div>
   );
