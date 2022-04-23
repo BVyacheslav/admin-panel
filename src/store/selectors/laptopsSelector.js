@@ -100,5 +100,6 @@ export const getLaptops = createSelector(
         ])
       )
       .sort(createSort(key, sortDirection));
+    // .slice(0, 2);
   }
 );

@@ -20,7 +20,7 @@ export const activeFilterReducer = (
       return payload;
 
     case CLEAR_ACTIVE_FILTER:
-      return {};
+      return initialState;
 
     default:
       return state;
