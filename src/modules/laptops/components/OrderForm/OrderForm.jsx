@@ -31,11 +31,6 @@ export const OrderForm = ({ className, editLaptop, onEditLaptop }) => {
     className,
   });
 
-  const dropdownClass = cx(styles.dropdown, {
-    [styles.showDropdown]: isShowDropdown,
-    className,
-  });
-
   return (
     <div className={modalWrapperClass}>
       {editLaptop && (
@@ -69,7 +64,7 @@ export const OrderForm = ({ className, editLaptop, onEditLaptop }) => {
                 onClick={handleClickInput}
               />
               <DropdownRadio
-                className={dropdownClass}
+                isShowDropdown={isShowDropdown}
                 onClick={handleClickDropdown}
                 status={editLaptop.status}
               />
