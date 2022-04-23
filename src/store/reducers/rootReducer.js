@@ -6,6 +6,7 @@ import { sortingReducer } from "./sortingReducer";
 import { activeFilterReducer } from "./activeFilterReducer";
 import { selectedLaptopsReducer } from "./selectedLaptopsReducer";
 import { editLaptopReducer } from "./editLaptopReducer";
+import { paginationReducer } from "./paginationReducer";
 
 export default combineReducers({
   laptops: laptopsReducer,
@@ -14,4 +15,5 @@ export default combineReducers({
   activeFilter: activeFilterReducer,
   selectedLaptops: selectedLaptopsReducer,
   editLaptop: editLaptopReducer,
+  pagination: paginationReducer,
 });

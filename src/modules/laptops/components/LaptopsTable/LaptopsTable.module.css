@@ -1,10 +1,18 @@
 .laptopsTable {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .tableBody {
+  flex: 1 0 auto;
 }
 
 .tableFooter {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .inStock {

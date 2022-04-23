@@ -8,6 +8,7 @@ import {
 import { Checkbox } from "components";
 import { LaptopsTableHeader } from "./LaptopsTableHeader/LaptopsTableHeader";
 import { OrderForm } from "../../components/";
+import { Pagination } from "./Pagination/Pagination";
 
 import cx from "classnames";
 
@@ -26,6 +27,8 @@ export const LaptopsTable = ({
   selectedLaptopsCount = 0,
   editLaptop,
   onEditLaptop,
+  laptopPages,
+  onSetPage,
 }) => {
   return (
     <div className={cx(styles.laptopsTable, className)}>
@@ -74,7 +77,8 @@ export const LaptopsTable = ({
         ))}
       </TableBody>
       <TableFooter className={styles.tableFooter}>
-        Выбрано записей: {selectedLaptopsCount}
+        <div>Выбрано записей: {selectedLaptopsCount}</div>
+        <Pagination laptopPages={laptopPages} onSetPage={onSetPage} />
       </TableFooter>
     </div>
   );

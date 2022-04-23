@@ -1,7 +1,7 @@
 import { SET_KEY_SORTING, SET_ORDER_SORTING } from "../constants/actionTypes";
 
 const initialState = {
-  key: "brand",
+  key: "id",
   sortDirection: "asc",
 };
 

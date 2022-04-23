@@ -34,14 +34,10 @@ export const LaptopsTableHeader = ({
   sortingKey,
 }) =>
   cells.map(({ id, title }) => {
-    const createHandleClick = (key) => () => {
-      onSorting(key);
-    };
-
     return (
       <TableCell
         key={id}
-        onClick={createHandleClick(id)}
+        onClick={onSorting(id)}
         sorting={sortingKey === id}
         sortingOrder={sortingOrder}
       >

@@ -5,6 +5,7 @@ import {
   getLaptops,
   getLaptopsIds,
   getLaptopForEdit,
+  getLaptopPages,
 } from "store/selectors/laptopsSelector";
 import {
   createSetKeySorting,
@@ -19,8 +20,8 @@ import {
   getSelectedLaptopsCount,
   getIsAllSelectedLaptops,
 } from "store/selectors/selectedLaptopsSelector";
-
 import { createSetEditLaptop } from "store/actionCreators/editLaptopCreator";
+import { createSetPage } from "store/actionCreators/paginationCreator";
 
 export const LaptopsTableContainer = () => {
   const dispatch = useDispatch();
@@ -31,8 +32,9 @@ export const LaptopsTableContainer = () => {
   const selectedLaptopsCount = useSelector(getSelectedLaptopsCount);
   const isAllSelectedLaptops = useSelector(getIsAllSelectedLaptops);
   const editLaptop = useSelector(getLaptopForEdit);
+  const laptopPages = useSelector(getLaptopPages);
 
-  const handleSorting = (key) => {
+  const handleSorting = (key) => () => {
     sorting.key === key
       ? dispatch(createSetOrderSorting())
       : dispatch(createSetKeySorting(key));
@@ -50,6 +52,10 @@ export const LaptopsTableContainer = () => {
     dispatch(createSetEditLaptop(value));
   };
 
+  const handleSetPage = (page) => () => {
+    dispatch(createSetPage(page));
+  };
+
   return (
     <LaptopsTable
       laptops={laptops}
@@ -63,6 +69,8 @@ export const LaptopsTableContainer = () => {
       selectedLaptopsCount={selectedLaptopsCount}
       editLaptop={editLaptop}
       onEditLaptop={handleSetEditLaptop}
+      laptopPages={laptopPages}
+      onSetPage={handleSetPage}
     />
   );
 };

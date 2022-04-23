@@ -3,6 +3,7 @@ import { getSorting } from "./sortingSelector";
 import { getActiveFilter } from "./activeFiltersSelector";
 import { getFilters } from "./filtersSelector";
 import { getEditLaptop } from "./editLaptopSelector";
+import { getPagination } from "./paginationSelector";
 
 export const getAllLaptops = ({ laptops }) => laptops;
 
@@ -17,17 +18,12 @@ export const getLaptopForEdit = createSelector(
     laptops.find(({ id }) => editLaptop.length > 0 && id.includes(editLaptop))
 );
 
-export const getPagination = () => ({
-  start: 0,
-  length: 100000,
-});
-
 const stringDateToMilliseconds = (string) => {
   const [day, month, year] = string.split(".");
   return Date.parse(`${year}-${month}-${day}`);
 };
 
-export const createSort = (key, sortDirection) => (a, b) => {
+const createSort = (key, sortDirection) => (a, b) => {
   let valueA = a[key];
   let valueB = b[key];
   if (key === "date") {
@@ -83,7 +79,8 @@ export const getLaptops = createSelector(
   getSearchLaptops,
   getActiveFilter,
   getSorting,
-  (laptops, filters, { key, sortDirection }) => {
+  getPagination,
+  (laptops, filters, { key, sortDirection }, { page, length }) => {
     const {
       dateOrderingStart,
       dateOrderingFinish,
@@ -99,7 +96,19 @@ export const getLaptops = createSelector(
           isStringsEqual(orderStatus, laptop.status),
         ])
       )
-      .sort(createSort(key, sortDirection));
-    // .slice(0, 2);
+      .sort(createSort(key, sortDirection))
+      .slice((page - 1) * length, page * length);
+  }
+);
+
+export const getLaptopPages = createSelector(
+  getAllLaptops,
+  getPagination,
+  (laptops, { length }) => {
+    const countLaptopPages =
+      laptops.length % length
+        ? Math.floor(laptops.length / length) + 1
+        : laptops.length / length;
+    return [...Array(countLaptopPages).keys()].map((x) => ++x);
   }
 );
