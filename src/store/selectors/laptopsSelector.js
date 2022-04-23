@@ -104,11 +104,14 @@ export const getLaptops = createSelector(
 export const getLaptopPages = createSelector(
   getAllLaptops,
   getPagination,
-  (laptops, { length }) => {
+  (laptops, { length, page }) => {
     const countLaptopPages =
       laptops.length % length
         ? Math.floor(laptops.length / length) + 1
         : laptops.length / length;
-    return [...Array(countLaptopPages).keys()].map((x) => ++x);
+    return {
+      pages: [...Array(countLaptopPages).keys()].map((x) => ++x),
+      activePage: page,
+    };
   }
 );

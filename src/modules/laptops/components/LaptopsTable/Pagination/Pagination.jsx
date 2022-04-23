@@ -3,11 +3,13 @@ import { Button } from "components/";
 import styles from "./Pagination.module.css";
 
 export const Pagination = ({ onSetPage, laptopPages }) => {
+  const { pages, activePage } = laptopPages;
+  console.log(pages, activePage);
   return (
     <div className={styles.pagination}>
-      {laptopPages.map((page) => (
+      {pages.map((page) => (
         <Button
-          variant="blue"
+          variant={page === activePage ? "white" : "blue"}
           size="small"
           key={page}
           onClick={onSetPage(page)}
