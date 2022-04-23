@@ -56,6 +56,7 @@ export const LaptopsTable = ({
                 value={laptop.id}
                 checked={selectedLaptops.includes(laptop.id)}
                 onChange={onCheckboxClick}
+                onClick={(event) => event.stopPropagation()}
               />
             </TableCell>
             <TableCell key={laptop.id}>{laptop.id}</TableCell>
