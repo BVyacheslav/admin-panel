@@ -9,6 +9,8 @@ import { Checkbox, Button } from "components";
 import { LaptopsTableHeader } from "./LaptopsTableHeader/LaptopsTableHeader";
 import { OrderForm } from "../../components/";
 import { Pagination } from "./Pagination/Pagination";
+import { ReactComponent as PencilIcon } from "icons/pencil.svg";
+import { ReactComponent as BinIcon } from "icons/bin.svg";
 
 import cx from "classnames";
 
@@ -84,10 +86,16 @@ export const LaptopsTable = ({
               className={styles.changeStatus}
               variant="white"
               size="small"
+              icon={BinIcon}
             >
               Изменить статус
             </Button>
-            <Button className={styles.delete} variant="white" size="small">
+            <Button
+              className={styles.delete}
+              variant="white"
+              size="small"
+              icon={PencilIcon}
+            >
               Удалить
             </Button>
           </div>
