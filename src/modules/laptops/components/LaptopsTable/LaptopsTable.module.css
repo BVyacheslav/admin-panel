@@ -15,3 +15,28 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.count {
+  margin-right: 1rem;
+}
+
+.footerPanel {
+  display: flex;
+  align-items: center;
+}
+
+.changeStatus {
+  margin-right: 1rem;
+}
+
+.delete {
+  background-color: red;
+}
+
+.buttonsWrapper {
+  display: none;
+}
+
+.showButtons {
+  display: flex;
+}

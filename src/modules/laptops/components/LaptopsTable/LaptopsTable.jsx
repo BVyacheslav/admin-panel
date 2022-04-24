@@ -5,7 +5,7 @@ import {
   TableBody,
   TableFooter,
 } from "components/Table";
-import { Checkbox } from "components";
+import { Checkbox, Button } from "components";
 import { LaptopsTableHeader } from "./LaptopsTableHeader/LaptopsTableHeader";
 import { OrderForm } from "../../components/";
 import { Pagination } from "./Pagination/Pagination";
@@ -30,6 +30,10 @@ export const LaptopsTable = ({
   laptopPages,
   onSetPage,
 }) => {
+  const dropdownClass = cx(styles.buttonsWrapper, {
+    [styles.showButtons]: selectedLaptopsCount > 0,
+  });
+
   return (
     <div className={cx(styles.laptopsTable, className)}>
       <OrderForm editLaptop={editLaptop} onEditLaptop={onEditLaptop} />
@@ -71,7 +75,24 @@ export const LaptopsTable = ({
         ))}
       </TableBody>
       <TableFooter className={styles.tableFooter}>
-        <div>Выбрано записей: {selectedLaptopsCount}</div>
+        <div className={styles.footerPanel}>
+          <div className={styles.count}>
+            Выбрано записей: {selectedLaptopsCount}
+          </div>
+          <div className={dropdownClass}>
+            <Button
+              className={styles.changeStatus}
+              variant="white"
+              size="small"
+            >
+              Изменить статус
+            </Button>
+            <Button className={styles.delete} variant="white" size="small">
+              Удалить
+            </Button>
+          </div>
+        </div>
+
         <Pagination laptopPages={laptopPages} onSetPage={onSetPage} />
       </TableFooter>
     </div>
