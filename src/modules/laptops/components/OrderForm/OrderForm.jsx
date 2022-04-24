@@ -16,8 +16,6 @@ export const OrderForm = ({ className, editLaptop, onEditLaptop }) => {
     setIsShow(editLaptop ? true : false);
   }, [editLaptop]);
 
-  const handleChange = () => {};
-
   const handleClickInput = () => {
     setIsShowDropdown(!isShowDropdown);
   };
@@ -32,9 +30,12 @@ export const OrderForm = ({ className, editLaptop, onEditLaptop }) => {
   });
 
   return (
-    <div className={modalWrapperClass}>
+    <div className={modalWrapperClass} onClick={onEditLaptop("")}>
       {editLaptop && (
-        <div className={styles.card}>
+        <div
+          className={styles.card}
+          onClick={(event) => event.stopPropagation()}
+        >
           <div className={styles.cardHeader}>
             <span className={styles.cardHeaderText}>
               Заявка #{editLaptop.id}
@@ -60,7 +61,7 @@ export const OrderForm = ({ className, editLaptop, onEditLaptop }) => {
               <InputWithLabel
                 label="Статус заказа"
                 value={editLaptop.status}
-                onChange={handleChange}
+                onChange={(event) => event.stopPropagation()}
                 onClick={handleClickInput}
               />
               <DropdownRadio
