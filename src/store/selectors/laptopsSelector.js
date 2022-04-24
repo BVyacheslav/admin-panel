@@ -48,9 +48,11 @@ const createSort = (key, sortDirection) => (a, b) => {
   return 0;
 };
 
-const isInRange = (min = 0, max = Number.MAX_SAFE_INTEGER, value = 0) => {
+const isInRange = (min, max, value = 0) => {
+  const minValue = min ? min : 0;
+  const maxValue = max ? max : Number.MAX_SAFE_INTEGER;
   if (min || max) {
-    return value >= min && value <= max;
+    return value >= minValue && value <= maxValue;
   }
   return true;
 };
@@ -92,7 +94,11 @@ export const getLaptops = createSelector(
       .filter((laptop) =>
         areAllTruthy([
           isInRange(orderPriceStart, orderPriceFinish, laptop.price),
-          isInRange(dateOrderingStart, dateOrderingFinish, laptop.date),
+          isInRange(
+            stringDateToMilliseconds(dateOrderingStart),
+            stringDateToMilliseconds(dateOrderingFinish),
+            stringDateToMilliseconds(laptop.date)
+          ),
           isStringsEqual(orderStatus, laptop.status),
         ])
       )
@@ -102,7 +108,7 @@ export const getLaptops = createSelector(
 );
 
 export const getLaptopPages = createSelector(
-  getAllLaptops,
+  getSearchLaptops,
   getPagination,
   (laptops, { length, page }) => {
     const countLaptopPages =
