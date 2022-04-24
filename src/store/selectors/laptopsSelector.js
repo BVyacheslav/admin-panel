@@ -102,19 +102,14 @@ export const getFilteredLaptops = createSelector(
   }
 );
 
-export const getSortedLaptops = createSelector(
+export const getLaptops = createSelector(
   getFilteredLaptops,
   getSorting,
-  (filteredLaptops, { key, sortDirection }) => {
-    return filteredLaptops.sort(createSort(key, sortDirection));
-  }
-);
-
-export const getLaptops = createSelector(
-  getSortedLaptops,
   getPagination,
-  (sortedLaptops, { page, length }) => {
-    return sortedLaptops.slice((page - 1) * length, page * length);
+  (filteredLaptops, { key, sortDirection }, { page, length }) => {
+    return filteredLaptops
+      .sort(createSort(key, sortDirection))
+      .slice((page - 1) * length, page * length);
   }
 );
 
