@@ -1,7 +1,7 @@
 import { SearchFilterPanel } from "../../components";
 import { useSelector, useDispatch } from "react-redux";
 import { getFilters } from "store/selectors/filtersSelector";
-import { getActiveFilter } from "store/selectors/activeFiltersSelector";
+import { getIsActiveFilter } from "store/selectors/activeFiltersSelector";
 import {
   createSetFilter,
   createClearAllFilters,
@@ -11,10 +11,7 @@ import {
 
 export const SearchFilterPanelContainer = () => {
   const { search } = useSelector(getFilters);
-  const activeFilters = useSelector(getActiveFilter);
-  const isActiveFilter = Object.values(activeFilters).some(
-    (filter) => filter !== ""
-  );
+  const isActiveFilter = useSelector(getIsActiveFilter);
   const dispatch = useDispatch();
   const handleChangeSearch = ({ target: { name, value } }) => {
     dispatch(createSetFilter({ name, value }));
