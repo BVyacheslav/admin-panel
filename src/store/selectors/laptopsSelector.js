@@ -77,12 +77,10 @@ export const getSearchLaptops = createSelector(
     )
 );
 
-export const getLaptops = createSelector(
+export const getFilteredLaptops = createSelector(
   getSearchLaptops,
   getActiveFilter,
-  getSorting,
-  getPagination,
-  (laptops, filters, { key, sortDirection }, { page, length }) => {
+  (laptops, filters) => {
     const {
       dateOrderingStart,
       dateOrderingFinish,
@@ -90,25 +88,38 @@ export const getLaptops = createSelector(
       orderPriceStart,
       orderPriceFinish,
     } = filters;
-    return laptops
-      .filter((laptop) =>
-        areAllTruthy([
-          isInRange(orderPriceStart, orderPriceFinish, laptop.price),
-          isInRange(
-            stringDateToMilliseconds(dateOrderingStart),
-            stringDateToMilliseconds(dateOrderingFinish),
-            stringDateToMilliseconds(laptop.date)
-          ),
-          isStringsEqual(orderStatus, laptop.status),
-        ])
-      )
-      .sort(createSort(key, sortDirection))
-      .slice((page - 1) * length, page * length);
+    return laptops.filter((laptop) =>
+      areAllTruthy([
+        isInRange(orderPriceStart, orderPriceFinish, laptop.price),
+        isInRange(
+          stringDateToMilliseconds(dateOrderingStart),
+          stringDateToMilliseconds(dateOrderingFinish),
+          stringDateToMilliseconds(laptop.date)
+        ),
+        isStringsEqual(orderStatus, laptop.status),
+      ])
+    );
+  }
+);
+
+export const getSortedLaptops = createSelector(
+  getFilteredLaptops,
+  getSorting,
+  (filteredLaptops, { key, sortDirection }) => {
+    return filteredLaptops.sort(createSort(key, sortDirection));
+  }
+);
+
+export const getLaptops = createSelector(
+  getSortedLaptops,
+  getPagination,
+  (sortedLaptops, { page, length }) => {
+    return sortedLaptops.slice((page - 1) * length, page * length);
   }
 );
 
 export const getLaptopPages = createSelector(
-  getSearchLaptops,
+  getFilteredLaptops,
   getPagination,
   (laptops, { length, page }) => {
     const countLaptopPages =
