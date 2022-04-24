@@ -14,3 +14,7 @@
   width: 320px;
   margin-right: 1rem;
 }
+
+.hideClearFilters {
+  display: none;
+}

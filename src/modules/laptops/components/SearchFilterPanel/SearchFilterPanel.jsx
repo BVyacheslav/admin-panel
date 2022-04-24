@@ -13,7 +13,12 @@ export const SearchFilterPanel = ({
   onClear,
   onClearFilters,
   onShowFilters,
+  isActiveFilter,
 }) => {
+  const buttonClass = cx(className, {
+    [styles.hideClearFilters]: !isActiveFilter,
+  });
+
   return (
     <div className={cx(styles.searchFilterPanel, className)}>
       <div className={styles.searchFilter}>
@@ -34,7 +39,12 @@ export const SearchFilterPanel = ({
         >
           Фильтры
         </Button>
-        <Button variant="blue" size="medium" onClick={onClearFilters}>
+        <Button
+          className={buttonClass}
+          variant="blue"
+          size="medium"
+          onClick={onClearFilters}
+        >
           Сбросить фильтры
         </Button>
       </div>
