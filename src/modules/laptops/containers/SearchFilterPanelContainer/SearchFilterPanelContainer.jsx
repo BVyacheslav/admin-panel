@@ -6,8 +6,8 @@ import {
   createSetFilter,
   createClearAllFilters,
   createSetShowFilter,
-} from "store/actionCreators/filtersCreator";
-import { createClearActiveFilter } from "store/actionCreators/activeFilterCreator";
+  createClearActiveFilter,
+} from "store/actionCreators/";
 
 export const SearchFilterPanelContainer = () => {
   const { search } = useSelector(getFilters);

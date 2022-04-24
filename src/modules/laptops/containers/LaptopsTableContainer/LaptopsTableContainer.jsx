@@ -8,21 +8,19 @@ import {
   getLaptopPages,
 } from "store/selectors/laptopsSelector";
 import {
-  createSetKeySorting,
-  createSetOrderSorting,
-} from "store/actionCreators/sortingCreator";
-import {
-  createSetAllSelectedLaptops,
-  createSetSelectedLaptops,
-  createClearSelectedLaptops,
-} from "store/actionCreators/selectedLaptopsActionCreator";
-import {
   getSelectedLaptops,
   getSelectedLaptopsCount,
   getIsAllSelectedLaptops,
 } from "store/selectors/selectedLaptopsSelector";
-import { createSetEditLaptop } from "store/actionCreators/editLaptopCreator";
-import { createSetPage } from "store/actionCreators/paginationCreator";
+import {
+  createSetKeySorting,
+  createSetOrderSorting,
+  createSetAllSelectedLaptops,
+  createSetSelectedLaptops,
+  createClearSelectedLaptops,
+  createSetEditLaptop,
+  createSetPage,
+} from "store/actionCreators";
 
 export const LaptopsTableContainer = () => {
   const dispatch = useDispatch();

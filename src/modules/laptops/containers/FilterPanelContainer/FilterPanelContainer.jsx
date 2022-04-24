@@ -1,8 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { FilterPanel } from "../../components";
 import { getFilters } from "store/selectors/filtersSelector";
-import { createSetFilter } from "store/actionCreators/filtersCreator";
-import { createSetActiveFilter } from "store/actionCreators/activeFilterCreator";
+import { createSetFilter, createSetActiveFilter } from "store/actionCreators";
 
 export const FilterPanelContainer = () => {
   const filters = useSelector(getFilters);
