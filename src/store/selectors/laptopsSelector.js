@@ -123,6 +123,9 @@ export const getLaptopPages = createSelector(
   getPagination,
   (laptops, { length, page }) => {
     const countLaptopPages = Math.ceil(laptops.length / length);
+    if (countLaptopPages < 2) {
+      return {};
+    }
     return {
       pages: [...Array(countLaptopPages).keys()].map((x) => ++x),
       activePage: page,
