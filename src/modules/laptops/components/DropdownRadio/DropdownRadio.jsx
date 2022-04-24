@@ -30,7 +30,6 @@ export const DropdownRadio = ({
       <RadioWithLabel
         label="В наличии"
         name="orderStatus"
-        id="В наличии"
         value="В наличии"
         checked={radioChoice === "В наличии"}
         onChange={handleChangeRadio}
@@ -41,7 +40,6 @@ export const DropdownRadio = ({
         value="Отсутствует"
         label="Отсутствует"
         name="orderStatus"
-        id="Отсутствует"
         checked={radioChoice === "Отсутствует"}
         onChange={handleChangeRadio}
         {...props}
