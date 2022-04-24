@@ -5,6 +5,14 @@
   align-items: center;
 }
 
+.inStock {
+  color: #459df5;
+}
+
+.outOfStock {
+  color: goldenrod;
+}
+
 .arrowIcon {
   fill: #ffffff;
   height: 1rem;

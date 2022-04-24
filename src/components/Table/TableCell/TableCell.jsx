@@ -8,14 +8,20 @@ export const TableCell = ({
   children,
   sorting,
   sortingOrder,
+  status,
   ...props
 }) => {
+  const tableCellClass = cx(className, styles.tableCell, {
+    [styles.inStock]: status === "В наличии",
+    [styles.outOfStock]: status === "Отсутствует",
+  });
+
   const arrowIconClass = cx(styles.arrowIcon, {
     [styles.reverseSort]: sortingOrder === "desc",
   });
 
   return (
-    <div className={cx(styles.tableCell, className)} {...props}>
+    <div className={tableCellClass} {...props}>
       <span>{children}</span>
       {sorting && <ArrowIcon className={arrowIconClass} />}
     </div>

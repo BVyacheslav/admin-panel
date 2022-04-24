@@ -64,14 +64,7 @@ export const LaptopsTable = ({
             <TableCell key={laptop.brand}>{laptop.brand}</TableCell>
             <TableCell key={laptop.model}>{laptop.model}</TableCell>
             <TableCell key={laptop.price}>{laptop.price}</TableCell>
-            <TableCell
-              key={laptop.status}
-              className={
-                laptop.status === "В наличии"
-                  ? styles.inStock
-                  : styles.outOfStock
-              }
-            >
+            <TableCell key={laptop.status} status={laptop.status}>
               {laptop.status}
             </TableCell>
           </TableRow>
