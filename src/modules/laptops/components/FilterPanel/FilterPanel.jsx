@@ -1,4 +1,6 @@
+import { useState } from "react";
 import cx from "classnames";
+import { DropdownRadio } from "../";
 import { Input, Button, InputWithLabel } from "components/";
 
 import styles from "./FilterPanel.module.css";
@@ -11,6 +13,16 @@ export const FilterPanel = ({
   onChangeFilterActive,
   onReset,
 }) => {
+  const [isShowDropdown, setIsShowDropdown] = useState(false);
+
+  const handleClickInput = () => {
+    setIsShowDropdown(!isShowDropdown);
+  };
+
+  const handleClickDropdown = () => {
+    setIsShowDropdown(false);
+  };
+
   const filterPanelClass = cx(styles.filterPanel, {
     [styles.showFilterPanel]: showFilterPanel,
     className,
@@ -36,16 +48,24 @@ export const FilterPanel = ({
           onChange={onChangeFilter}
           onClear={onReset("dateOrderingFinish")}
         />
-
-        <InputWithLabel
-          className={styles.status}
-          name="orderStatus"
-          label="Статус заказа"
-          placeholder="Нажмите для выбора"
-          value={filters.orderStatus}
-          onChange={onChangeFilter}
-          onClear={onReset("orderStatus")}
-        />
+        <div className={styles.status}>
+          <InputWithLabel
+            name="orderStatus"
+            label="Статус заказа"
+            placeholder="Нажмите для выбора"
+            value={filters.orderStatus}
+            onChange={(event) => event.stopPropagation()}
+            onClear={onReset("orderStatus")}
+            onClick={handleClickInput}
+          />
+          <DropdownRadio
+            isShowDropdown={isShowDropdown}
+            onClick={handleClickDropdown}
+            onChangeFilter={onChangeFilter}
+            filters={filters}
+            filterStatus
+          />
+        </div>
 
         <InputWithLabel
           className={styles.priceStart}

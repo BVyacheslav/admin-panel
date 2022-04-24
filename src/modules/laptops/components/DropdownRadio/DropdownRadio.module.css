@@ -19,3 +19,7 @@
 .showDropdown {
   display: flex;
 }
+
+.filterStatus {
+  width: 192px;
+}

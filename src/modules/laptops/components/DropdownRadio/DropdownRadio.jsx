@@ -7,16 +7,21 @@ export const DropdownRadio = ({
   className,
   status,
   isShowDropdown,
+  filterStatus,
+  onChangeFilter,
+  filters,
   ...props
 }) => {
   const [radioChoice, setRadioChoice] = useState(status ? status : "");
 
   function handleChangeRadio(e) {
-    setRadioChoice(e.target.id);
+    setRadioChoice(e.target.value);
+    onChangeFilter && onChangeFilter(e);
   }
 
   const dropdownClass = cx(styles.dropdown, {
     [styles.showDropdown]: isShowDropdown,
+    [styles.filterStatus]: filterStatus,
     className,
   });
 
@@ -24,16 +29,18 @@ export const DropdownRadio = ({
     <div className={dropdownClass}>
       <RadioWithLabel
         label="В наличии"
-        name="dropdownRadio"
+        name="orderStatus"
         id="В наличии"
+        value="В наличии"
         checked={radioChoice === "В наличии"}
         onChange={handleChangeRadio}
         {...props}
       />
       <RadioWithLabel
         className={styles.lastRadio}
+        value="Отсутствует"
         label="Отсутствует"
-        name="dropdownRadio"
+        name="orderStatus"
         id="Отсутствует"
         checked={radioChoice === "Отсутствует"}
         onChange={handleChangeRadio}
