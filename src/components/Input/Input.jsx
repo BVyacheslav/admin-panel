@@ -33,8 +33,8 @@ export const Input = ({
         {...props}
       />
       {(value || defaultValue) && !disabled && (
-        <button onClick={onClear} className={styles.deleteIcon}>
-          <DeleteIcon />
+        <button onClick={onClear} className={styles.deleteButton}>
+          <DeleteIcon className={styles.deleteIcon} />
         </button>
       )}
       {disabled && <LockedIcon className={styles.lockedIcon} />}

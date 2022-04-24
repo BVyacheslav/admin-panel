@@ -8,6 +8,5 @@ export function configureStore(initialState) {
     initialState,
     applyMiddleware(thunk, logger)
   );
-  console.log("state", store.getState());
   return store;
 }

@@ -41,7 +41,7 @@
   color: #000000;
 }
 
-.deleteIcon {
+.deleteButton {
   position: absolute;
   height: 16px;
   width: 16px;
@@ -50,6 +50,10 @@
   background: inherit;
   right: 11.5px;
   cursor: pointer;
+}
+
+.deleteIcon {
+  stroke: #bad8f5;
 }
 
 .lockedIcon {
