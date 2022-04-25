@@ -86,7 +86,7 @@ export const LaptopsTable = ({
               className={styles.changeStatus}
               variant="white"
               size="small"
-              icon={BinIcon}
+              icon={PencilIcon}
             >
               Изменить статус
             </Button>
@@ -94,7 +94,7 @@ export const LaptopsTable = ({
               className={styles.delete}
               variant="white"
               size="small"
-              icon={PencilIcon}
+              icon={BinIcon}
             >
               Удалить
             </Button>
