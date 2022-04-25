@@ -30,6 +30,10 @@ const createSort = (key, sortDirection) => (a, b) => {
     valueA = stringDateToMilliseconds(a[key]);
     valueB = stringDateToMilliseconds(b[key]);
   }
+  if (key === "id") {
+    valueA = Number(a[key]);
+    valueB = Number(b[key]);
+  }
   if (sortDirection === "asc") {
     if (valueA < valueB) {
       return -1;
