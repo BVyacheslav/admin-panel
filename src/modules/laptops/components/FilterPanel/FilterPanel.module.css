@@ -1,0 +1,42 @@
+.filterPanel {
+  display: none;
+  align-items: flex-end;
+  background: #ebf0f5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.showFilterPanel {
+  display: flex;
+}
+
+.filters {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 1rem;
+}
+
+.dateStart {
+  width: 142px;
+  margin-right: 4px;
+}
+
+.dateFinish {
+  width: 142px;
+  margin-right: 1rem;
+}
+
+.priceStart {
+  width: 126px;
+  margin-right: 4px;
+}
+
+.priceFinish {
+  width: 126px;
+}
+
+.status {
+  width: 192px;
+  margin-right: 1rem;
+}

@@ -1,0 +1,42 @@
+.laptopsTable {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tableBody {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.tableFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.count {
+  margin-right: 1rem;
+}
+
+.footerPanel {
+  display: flex;
+  align-items: center;
+}
+
+.changeStatus {
+  margin-right: 1rem;
+}
+
+.delete {
+  background-color: #ed2b4e;
+}
+
+.buttonsWrapper {
+  display: none;
+}
+
+.showButtons {
+  display: flex;
+}
