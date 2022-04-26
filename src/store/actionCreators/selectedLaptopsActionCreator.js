@@ -4,17 +4,17 @@ import {
   CLEAR_SELECTED_LAPTOPS,
 } from "../constants/actionTypes";
 
-export const createSetAllSelectedLaptops = (payload) => ({
+export const setAllSelectedLaptops = (payload) => ({
   type: SET_ALL_SELECTED_LAPTOPS,
   payload,
 });
 
-export const createSetSelectedLaptops = (payload) => ({
+export const setSelectedLaptops = (payload) => ({
   type: SET_SELECTED_LAPTOPS,
   payload,
 });
 
-export const createClearSelectedLaptops = (payload) => ({
+export const clearSelectedLaptops = (payload) => ({
   type: CLEAR_SELECTED_LAPTOPS,
   payload,
 });

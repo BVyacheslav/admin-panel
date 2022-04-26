@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { getFilters } from "store/selectors/filtersSelector";
 import { getIsActiveFilter } from "store/selectors/activeFiltersSelector";
 import {
-  createSetFilter,
-  createClearAllFilters,
-  createSetShowFilter,
-  createClearActiveFilter,
+  setFilter,
+  clearAllFilters,
+  setShowFilter,
+  clearActiveFilter,
 } from "store/actionCreators/";
 
 export const SearchFilterPanelContainer = () => {
@@ -14,20 +14,20 @@ export const SearchFilterPanelContainer = () => {
   const isActiveFilter = useSelector(getIsActiveFilter);
   const dispatch = useDispatch();
   const handleChangeSearch = ({ target: { name, value } }) => {
-    dispatch(createSetFilter({ name, value }));
+    dispatch(setFilter({ name, value }));
   };
 
   const handleReset = (key) => () => {
-    dispatch(createSetFilter({ name: key, value: "" }));
+    dispatch(setFilter({ name: key, value: "" }));
   };
 
   const handleClearFilters = () => {
-    dispatch(createClearAllFilters());
-    dispatch(createClearActiveFilter());
+    dispatch(clearAllFilters());
+    dispatch(clearActiveFilter());
   };
 
   const handleShowFilters = () => {
-    dispatch(createSetShowFilter());
+    dispatch(setShowFilter());
   };
 
   return (

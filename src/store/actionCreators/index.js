@@ -1,17 +1,10 @@
+export { clearActiveFilter, setActiveFilter } from "./activeFilterCreator";
+export { setEditLaptop } from "./editLaptopCreator";
+export { setShowFilter, setFilter, clearAllFilters } from "./filtersCreator";
+export { setPage } from "./paginationCreator";
 export {
-  createClearActiveFilter,
-  createSetActiveFilter,
-} from "./activeFilterCreator";
-export { createSetEditLaptop } from "./editLaptopCreator";
-export {
-  createSetShowFilter,
-  createSetFilter,
-  createClearAllFilters,
-} from "./filtersCreator";
-export { createSetPage } from "./paginationCreator";
-export {
-  createSetAllSelectedLaptops,
-  createSetSelectedLaptops,
-  createClearSelectedLaptops,
+  setAllSelectedLaptops,
+  setSelectedLaptops,
+  clearSelectedLaptops,
 } from "./selectedLaptopsActionCreator";
-export { createSetKeySorting, createSetOrderSorting } from "./sortingCreator";
+export { setKeySorting, setOrderSorting } from "./sortingCreator";

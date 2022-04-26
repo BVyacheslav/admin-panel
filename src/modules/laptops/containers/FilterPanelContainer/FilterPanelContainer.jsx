@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { FilterPanel } from "../../components";
 import { getFilters } from "store/selectors/filtersSelector";
-import { createSetFilter, createSetActiveFilter } from "store/actionCreators";
+import { setFilter, setActiveFilter } from "store/actionCreators";
 
 export const FilterPanelContainer = () => {
   const filters = useSelector(getFilters);
@@ -9,15 +9,15 @@ export const FilterPanelContainer = () => {
   const dispatch = useDispatch();
 
   const handleChangeFilter = ({ target: { name, value } }) => {
-    dispatch(createSetFilter({ name, value }));
+    dispatch(setFilter({ name, value }));
   };
 
   const handleReset = (key) => () => {
-    dispatch(createSetFilter({ name: key, value: "" }));
+    dispatch(setFilter({ name: key, value: "" }));
   };
 
   const handleChangeFilterActive = () => {
-    dispatch(createSetActiveFilter(filters));
+    dispatch(setActiveFilter(filters));
   };
 
   return (

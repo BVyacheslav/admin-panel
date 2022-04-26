@@ -1,6 +1,6 @@
 import { SET_PAGE } from "../constants/actionTypes";
 
-export const createSetPage = (payload) => ({
+export const setPage = (payload) => ({
   type: SET_PAGE,
   payload,
 });

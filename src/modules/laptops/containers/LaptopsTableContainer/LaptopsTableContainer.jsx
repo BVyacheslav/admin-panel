@@ -13,13 +13,13 @@ import {
   getIsAllSelectedLaptops,
 } from "store/selectors/selectedLaptopsSelector";
 import {
-  createSetKeySorting,
-  createSetOrderSorting,
-  createSetAllSelectedLaptops,
-  createSetSelectedLaptops,
-  createClearSelectedLaptops,
-  createSetEditLaptop,
-  createSetPage,
+  setKeySorting,
+  setOrderSorting,
+  setAllSelectedLaptops,
+  setSelectedLaptops,
+  clearSelectedLaptops,
+  setEditLaptop,
+  setPage,
 } from "store/actionCreators";
 
 export const LaptopsTableContainer = () => {
@@ -35,26 +35,26 @@ export const LaptopsTableContainer = () => {
 
   const handleSorting = (key) => () => {
     sorting.key === key
-      ? dispatch(createSetOrderSorting())
-      : dispatch(createSetKeySorting(key));
+      ? dispatch(setOrderSorting())
+      : dispatch(setKeySorting(key));
   };
 
   const handleCheckboxClick = (e) => {
-    dispatch(createSetSelectedLaptops(e.target.value));
+    dispatch(setSelectedLaptops(e.target.value));
   };
 
   const handleAllCheckboxClick = () => {
     isAllSelectedLaptops
-      ? dispatch(createClearSelectedLaptops())
-      : dispatch(createSetAllSelectedLaptops(laptopsIds));
+      ? dispatch(clearSelectedLaptops())
+      : dispatch(setAllSelectedLaptops(laptopsIds));
   };
 
   const handleSetEditLaptop = (value) => () => {
-    dispatch(createSetEditLaptop(value));
+    dispatch(setEditLaptop(value));
   };
 
   const handleSetPage = (page) => () => {
-    dispatch(createSetPage(page));
+    dispatch(setPage(page));
   };
 
   return (
