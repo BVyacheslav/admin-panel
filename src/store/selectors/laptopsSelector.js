@@ -52,9 +52,9 @@ const createSort = (key, sortDirection) => (a, b) => {
   return 0;
 };
 
-const isInRange = (min, max, value = 0) => {
-  const minValue = min ? min : 0;
-  const maxValue = max ? max : Number.MAX_SAFE_INTEGER;
+const isInRange = (min, max, value) => {
+  const minValue = min || 0;
+  const maxValue = max || Number.MAX_SAFE_INTEGER;
   if (min || max) {
     return value >= minValue && value <= maxValue;
   }
